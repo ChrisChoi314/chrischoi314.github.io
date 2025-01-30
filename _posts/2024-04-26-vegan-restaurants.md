@@ -79,7 +79,7 @@ Here are some of my recommendations if you're ever in the area.
 </ul>
 
 <b><u>Chicago, IL</u></b>
-<br>My fiancee [Antara Mageshwaran]() lives in the outskirts of Chicago, so I come here a couple times a year to visit her family and explore Chicago.  
+<br>
 <ul>
     <li>Chicago Diner</li>
     <li>Cravings</li>
@@ -89,7 +89,7 @@ Here are some of my recommendations if you're ever in the area.
 </ul>
 
 <b><u>Cleveland, OH</u></b>
-<br>We were here for the total solar eclipse on April 8, 2024 and for me to propose to my then girlfriend. 
+<br>
 <ul>
     <li>Foodhisattva</li>
     <li>Sakana</li>
@@ -98,7 +98,6 @@ Here are some of my recommendations if you're ever in the area.
 
 <b><u>Columbus, OH</u></b>
 <br>
-I was here to visit my fiance's family friends, the last week of February, 2024.
 <ul>
     <li>Seitan's Realm</li>
 </ul>
