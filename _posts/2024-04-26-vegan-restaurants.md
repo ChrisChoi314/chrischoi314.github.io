@@ -95,6 +95,7 @@ Here are some of my recommendations if you're ever in the area.
 </ul>
 
 <b><u>Columbus, OH</u></b>
+
 <ul>
     <li>Seitan's Realm</li>
 </ul>
