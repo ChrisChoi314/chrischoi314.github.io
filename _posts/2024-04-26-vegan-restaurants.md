@@ -6,7 +6,7 @@ description: a list of my favorite vegan restuarants in all of the cities I've b
 tags: vegan
 categories: 
 ---
-I am a vegan. I am also a foodie. This combination leads me to try to find the best vegan food in every city I find myself in. 
+I used to be a vegan, from 2020 to 2024, but during that time, I have compiled a list of really good places I have explored in that time. 
 
 Here are some of my recommendations if you're ever in the area. 
 
@@ -79,7 +79,6 @@ Here are some of my recommendations if you're ever in the area.
 </ul>
 
 <b><u>Chicago, IL</u></b>
-<br>
 <ul>
     <li>Chicago Diner</li>
     <li>Cravings</li>
@@ -89,7 +88,6 @@ Here are some of my recommendations if you're ever in the area.
 </ul>
 
 <b><u>Cleveland, OH</u></b>
-<br>
 <ul>
     <li>Foodhisattva</li>
     <li>Sakana</li>
@@ -97,7 +95,7 @@ Here are some of my recommendations if you're ever in the area.
 </ul>
 
 <b><u>Columbus, OH</u></b>
-<br>
+
 <ul>
     <li>Seitan's Realm</li>
 </ul>
@@ -120,13 +118,6 @@ I was here on March 21-23, 2024 for the ASU open house since I had gotten admitt
     <li>Green New American Vegetarian</li>
     <li>Nami</li>
     <li>Dark Hall Coffee</li>
-</ul>
-
-<b><u>Orlando, FL</u></b>
-<br>
-I was here for spring break in March 2024 with friends to visit Disney World and Universal Studios. I'll update this will all of the vegan places I had at the theme parks.
-<ul>
-    <li></li>
 </ul>
 
 <b><u>Harrisburg, PA</u></b>
