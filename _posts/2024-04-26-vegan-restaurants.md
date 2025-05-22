@@ -95,7 +95,6 @@ Here are some of my recommendations if you're ever in the area.
 </ul>
 
 <b><u>Columbus, OH</u></b>
-
 <ul>
     <li>Seitan's Realm</li>
 </ul>
@@ -149,5 +148,3 @@ I visited here while on vacation on our way home from Canada. We were attending 
 <ul>
     <li>Detroit Filling Station</li>
 </ul>
-
-WORK IN PROGRESS! 
