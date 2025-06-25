@@ -2,11 +2,11 @@
 layout: about
 title: about
 permalink: /
-subtitle: Researcher · Theoretical Cosmology · PTA · Alternates to GR
+subtitle: Researcher · Theoretical Cosmology · PTA · Massive Gravity
 profile:
   align: right
-  image: prof_pic.jpg
-  image_circular: true # crops the image to make it circular
+  image: prof_pic.png
+  image_circular: false # crops the image to make it circular
   address: <p>Pittsburgh, Pennsylvania</p>
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
@@ -14,15 +14,15 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a 1st-year PhD student studying Physics at [Carnegie Mellon University](https://www.cmu.edu/), which I started in the fall of 2023. I graduated from CMU with a Bachelors in Physics and a minor in Math in 2024. I am currently advised by Prof. [Tina Kahniashvili](https://www.cmu.edu/physics/people/faculty/kahniashvili.html). 
+I am a 1st-year PhD student studying Physics at [Carnegie Mellon University](https://www.cmu.edu/), specifically the field of Theoretical Cosmology. I graduated from CMU with a Bachelors of Science in Physics and a minor in Math in 2024. I am currently advised by Prof. [Tina Kahniashvili](https://www.cmu.edu/physics/people/faculty/kahniashvili.html). 
 
 ## Background
 
- I am originally from South Korea, and grew up in New York City. My parents are from [Jeollabuk-do](https://en.wikipedia.org/wiki/North_Jeolla_Province), but I myself was born in Seoul.
+ I am originally from South Korea, and grew up mostly in Queens, NYC. My parents are from [Jeollabuk-do](https://en.wikipedia.org/wiki/North_Jeolla_Province), but I myself was born in Seoul. We moved to Los Angeles when I was about 7 months old, and then to NYC when I was around 5. Since 2020, I have been living in Pittsburgh, PA, where I will continue to call my home for the foreseeable future.  
 
 ## General Interests
 
-I enjoy reading hard sci-fi novels and short stories, such as those by Greg Egan, Liu Cixin, Neal Stephenson, and Peter Watts. You can check out my [Goodreads account](https://www.goodreads.com/user/show/86513877-chris-choi). I also love listening to music, especially the genre of prog rock and prog metal. I really enjoy retro prog rock from Sweden, with bands such as Moon Safari, A.C.T., Kaipa, Karmakanic, The Flower Kings, and Brighteye Brison. I also enjoy consuming anime in my free time. I am also competitive speedcuber, with a focus on FTO (Face-Turning Octahedron). I also enjoy drawing in my spare time. My portfolio can be found on my [art instagram](https://www.instagram.com/sophonicai/).
+I enjoy reading hard sci-fi novels and short stories, such as those by Greg Egan, Liu Cixin, and Peter Watts, to name a few. You can check out my [Goodreads account](https://www.goodreads.com/user/show/86513877-chris-choi), where I update my catalogue and occasionally post reviews about sci-fi novels. I also love listening to music, especially the genre of prog rock and prog metal (about a 70%-30% split respectively). Specifically, I really enjoy retro prog rock from Sweden, with bands such as Moon Safari, A.C.T., Kaipa, Karmakanic, The Flower Kings, and Brighteye Brison. I also enjoy consuming anime in my free time. I am also competitive speedcuber, with a focus on FTO (Face-Turning Octahedron). I also enjoy drawing in my spare time. My portfolio can be found on my [art instagram](https://www.instagram.com/sophonicai/).
 
 ## Research Interests
 
