@@ -6,7 +6,7 @@ description: a list of my favorite vegan restuarants in all of the cities I've b
 tags: vegan
 categories: 
 ---
-I used to be a vegan, from 2020 to 2024, but during that time, I have compiled a list of really good places I have explored in that time. 
+I used to be a vegan, from 2020 to 2024, but during that time, I have compiled a list of really good places I have explored in that time. Hopefully, this is of use to some people.
 
 Here are some of my recommendations if you're ever in the area. 
 
@@ -22,7 +22,7 @@ Here are some of my recommendations if you're ever in the area.
     <li>ShadoBeni Trinidadian Vegan Cuisine</li>
     <li>Allegro Hearth Bakery</li>
     <li>Kaibur Coffee</li>
-    <li>Essence</li>
+    <li>Essence (gone)</li>
     <li>Moodz</li>
     <li>Con Alma</li>
     <li>The Zenith</li>
@@ -37,7 +37,7 @@ Here are some of my recommendations if you're ever in the area.
 </ul>
 
 <b><u>New York City, NY</u></b>
-<br>Grew up here and family still lives here. I go back every so often when there are breaks in the semester. I have been eating vegan food here since May, 2020. 
+<br>Grew up here and family still lives here. I go back every so often when there are breaks in the semester.
 <ul>
     <li>Manhattan</li>
     <ul>
@@ -91,7 +91,7 @@ Here are some of my recommendations if you're ever in the area.
 <ul>
     <li>Foodhisattva</li>
     <li>Sakana</li>
-    <li>The Fairmount Cocktail Bar  </li>
+    <li>The Fairmount Cocktail Bar</li>
 </ul>
 
 <b><u>Columbus, OH</u></b>
@@ -113,7 +113,7 @@ I was here for AAS 243, an astronomy conference, on Jan 8-11, 2024.
 
 <b><u>Pheonix, AZ</u></b>
 <br>
-I was here on March 21-23, 2024 for the ASU open house since I had gotten admitted to their Physics PhD program Lovely weather here. 
+I was here on March 21-23, 2024 for the ASU open house since I had gotten admitted to their Physics PhD program. Lovely weather here. 
 <ul>
     <li>Green New American Vegetarian</li>
     <li>Nami</li>
@@ -145,7 +145,7 @@ I visited here while on vacation on our way home from Canada. We were attending 
 
 <b><u>Ann Arbor, MI</u></b>
 <br>
-I visited here while on vacation on our way home from Canada. We were attending my little brother's orientation for UMich. 
+I visited here while on vacation on our way home from Canada.
 <ul>
     <li>Detroit Filling Station</li>
 </ul>

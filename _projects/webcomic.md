@@ -129,7 +129,7 @@ Tada, a completed page!
 
 ## Inspirations and References
 
-The protagonist was based off of [Ema Yasuhara](https://shirobako.fandom.com/wiki/Ema_Yasuhara) from the anime [Shirobako](https://myanimelist.net/anime/25835/Shirobako). The first scene of the story, which detailed how the girl was late for school, never happened to me, but I was forced to recite the prayer everyday before I left for school. I did try to ignore my father, but I never dared to neglect reciting it. 
+The protagonist was based off of [Ema Yasuhara](https://myanimelist.net/character/111953/Ema_Yasuhara) from the anime [Shirobako](https://myanimelist.net/anime/25835/Shirobako). The first scene of the story, which detailed how the girl was late for school, never actually happened to me, but I was forced to recite the prayer everyday before I left for school. I did try to ignore my father, but I never dared to neglect reciting it. 
 
 The conversation between the girl and her friend never happened to me, but I did get similar reactions when the people I used to go to church with found out my dad was a pastor. The purpose of the girl talking about Opeth was to establish a connection between her and prog, allowing me to seamlessly insert the flashback scene and the song [Ghost of Perdition](https://www.youtube.com/watch?v=MDBykpSXsSE) by Opeth. In retrospect, her dialogue about her dad's band not getting the signature seems a little cringy and out of place, but it was the best I could come up with. I admit, I'm not exactly the best storyteller. 
 
@@ -174,7 +174,7 @@ Instead, I chose to show the theater scene next, which I originally intended as 
     A side by side of Rohan Kishibe's face and my inspired panel from the webcomic.
 </div>  
 
-Finally, the last scene is perhaps the most powerful scene of the webcomic. Believe it or not, this entire scene is almost entirely based on reality. I was on the couch in the living room, listening to [Oni-chan](https://www.youtube.com/watch?v=aWaFqY_taT8) by Others by No One. I was introduced to them earlier that day when a facebook friend told me about them. It was my 3rd time listening to the song. My mother was sitting on the couch next to mine when she heard growl vocals from my phone. The rest of the story unfolded pretty much how it happened in the webcomic, except I didn't do that dramatic "I'm going home" exit. I just tried to laugh it off but I was seriously spooked. I was actually able to receive the lead singer of Others by No One's blessing to include them in the webcomic. Also, the panel where the mother was comparing the singer to the devil was directly inspired by Hayasaka Ai from Kaguya Sama: Love is war.
+Finally, the last scene is perhaps the most powerful scene of the webcomic. Believe it or not, this entire scene is almost entirely based on reality. I was on the couch in the living room, listening to [Oni-chan](https://www.youtube.com/watch?v=aWaFqY_taT8) by Others by No One, a really niche prog metal band from Ohio. I was introduced to them earlier that day when a facebook friend told me about them. It was my 3rd time listening to the song. My mother was sitting on the couch next to mine when she heard growl vocals from my phone. The rest of the story unfolded pretty much how it happened in the webcomic, except I didn't do that dramatic "I'm going home" exit. I just tried to laugh it off but I was seriously spooked. I was actually able to receive the lead singer of Others by No One's blessing to include them in the webcomic. Also, the panel where the mother was comparing the singer to the devil was directly inspired by Hayasaka Ai from Kaguya Sama: Love is war.
 <div class="row justify-content-sm-center">
 <div class="col-sm mt-3 mt-md-0">
     <center>
@@ -200,9 +200,3 @@ My original intended audience was the religious parents who think indoctrinating
 ## Conclusion
 
 Looking back on this project, 2.5 years after I first published it, I think that this was a necessary step in my ideological growth. I really did struggle during the COVID pandemic because of the pressure and constraints religion caused me to endure, but perhaps there was a lot that was a bit overemphasized or unfairly biased to what I was going through, reading back at what I had wrote. I was able to close a chapter in my life, and I have since mellowed out from my initial, sometimes reactionary views of religion. I enjoy looking back at my work, and wonder at the potential I had if I had kept writing stories. Maybe one day, I'll serialize a story, perhaps in hard sci-fi, and continue where I left off in my artistic journey.
-
-
-
-
- 
-
