@@ -215,7 +215,7 @@ Respect of the different constraints is summarized in the next figure.
 <div class="row justify-content-sm-center">
   <div class="col-sm mt-3 mt-md-0">
   <center>
-  <object data="assets/img/projects/mg_paper/fig4.pdf" type="application/pdf" width="100%" height="600px">
+  <object data="assets/img/projects/paper_1/fig4.pdf" type="application/pdf" width="100%" height="600px">
   <p>Your browser does not support embedded PDFs. 
         <a href="assets/img/projects/paper_1/fig4.pdf">Download the PDF</a> instead.</p>
     </object>
