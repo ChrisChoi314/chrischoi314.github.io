@@ -215,7 +215,7 @@ Respect of the different constraints is summarized in the next figure.
 <div class="row justify-content-sm-center">
   <div class="col-sm mt-3 mt-md-0">
   <center>
-  <embed src="assets/img/projects/paper_1/fig4.pdf" type="application/pdf">
+    {% include figure.html path="assets/img/projects/paper_1/fig4.pdf" title="compare" class="img-fluid rounded z-depth-1" %}
   </center>
   </div>
 </div>
