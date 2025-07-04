@@ -215,8 +215,7 @@ Respect of the different constraints is summarized in the next figure.
 <div class="row justify-content-sm-center">
   <div class="col-sm mt-3 mt-md-0">
   <center>
-  <object data="assets/img/projects/paper_1/fig4.pdf" type="application/pdf" width="100%" height="600px">
-    </object>
+  <embed src="assets/img/projects/paper_1/fig4.pdf" type="application/pdf">
   </center>
   </div>
 </div>
