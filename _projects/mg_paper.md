@@ -119,7 +119,7 @@ The solution to the equation of motion has the following behavior:
 <div class="row justify-content-sm-center">
     <div class="col-sm mt-3 mt-md-0">
     <center>
-        {% include figure.html path="assets/img/projects/paper_1/fig1.pdf" title="mode" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/projects/paper_1/fig1.png" title="mode" class="img-fluid rounded z-depth-1" %}
     </center>
     </div>
 </div>
@@ -171,7 +171,7 @@ It looks something like this: (reproduced from Figure 2 of our paper):
 <div class="row justify-content-sm-center">
   <div class="col-sm mt-3 mt-md-0">
   <center>
-    {% include figure.html path="assets/img/projects/paper_1/fig2.pdf" title="spectrum" class="img-fluid rounded z-depth-1" %}
+    {% include figure.html path="assets/img/projects/paper_1/fig2.png" title="spectrum" class="img-fluid rounded z-depth-1" %}
   </center>
   </div>
 </div>
@@ -194,7 +194,7 @@ where $$H_0$$ is the present-day Hubble parameter. We converted our results into
 <div class="row justify-content-sm-center">
   <div class="col-sm mt-3 mt-md-0">
   <center>
-    {% include figure.html path="assets/img/projects/paper_1/fig3.pdf" title="compare" class="img-fluid rounded z-depth-1" %}
+    {% include figure.html path="assets/img/projects/paper_1/fig3.png" title="compare" class="img-fluid rounded z-depth-1" %}
   </center>
   </div>
 </div>
@@ -215,7 +215,7 @@ Respect of the different constraints is summarized in the next figure.
 <div class="row justify-content-sm-center">
   <div class="col-sm mt-3 mt-md-0">
   <center>
-    {% include figure.html path="assets/img/projects/paper_1/fig4.pdf" title="compare" class="img-fluid rounded z-depth-1" %}
+    {% include figure.html path="assets/img/projects/paper_1/fig4.png" title="compare" class="img-fluid rounded z-depth-1" %}
   </center>
   </div>
 </div>
