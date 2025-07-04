@@ -2,7 +2,7 @@
 layout: page
 title: NANOGrav 15-yr and Massive Gravity
 description: reproducing the SGWB with massive gravity
-img: assets/img/projects/mg_paper/cover.png
+img: assets/img/projects/paper_1/cover.png
 importance: 1
 category: research
 #related_publications: Choi:2023tun
@@ -30,7 +30,7 @@ GWs are produced by accelerating mass/energy distributions, much like how light 
 <div class="row justify-content-sm-center">
     <div class="col-sm mt-3 mt-md-0">
     <center>
-        {% include figure.html path="assets/img/projects/mg_paper/plus_cross.gif" title="plus_cross" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/projects/paper_1/plus_cross.gif" title="plus_cross" class="img-fluid rounded z-depth-1" %}
     </center>
     </div>
 </div>
@@ -47,7 +47,7 @@ GWs were first detected in September 14, 2015, almost exactly a century after th
 <div class="row justify-content-sm-center">
     <div class="col-sm mt-3 mt-md-0">
     <center>
-        {% include figure.html path="assets/img/projects/mg_paper/first_ligo.png" title="first_ligo" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/projects/paper_1/first_ligo.png" title="first_ligo" class="img-fluid rounded z-depth-1" %}
     </center>
     </div>
 </div>
@@ -66,7 +66,7 @@ The NANOGrav collaboration has been collecting data from pulsars within our gala
 <div class="row justify-content-sm-center">
     <div class="col-sm mt-3 mt-md-0">
     <center>
-        {% include figure.html path="assets/img/projects/mg_paper/ng_results.png" title="ng_results" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/projects/paper_1/ng_results.png" title="ng_results" class="img-fluid rounded z-depth-1" %}
     </center>
     </div>
 </div>
@@ -119,7 +119,7 @@ The solution to the equation of motion has the following behavior:
 <div class="row justify-content-sm-center">
     <div class="col-sm mt-3 mt-md-0">
     <center>
-        {% include figure.html path="assets/img/projects/mg_paper/mode.png" title="mode" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/projects/paper_1/fig1.pdf" title="mode" class="img-fluid rounded z-depth-1" %}
     </center>
     </div>
 </div>
@@ -138,4 +138,101 @@ $$\Omega_{\text{GW}} = \frac{1}{\rho_c}\frac{d\rho_{\text{GW}}}{d\log k}$$
 
 where $$\rho_c = 3H^2/8\pi G$$ is the critical density, and we note that $$\frac{d\rho_{\text{GW}}}{d\log k}$$ is a notational way of representing the spectral density of $$\rho_\text{GW}$$ rather than a literal derivative with respect to $$\log k$$ (see Footnote 65 of [Maggiore et al. 2007](https://academic.oup.com/book/41655)). 
 
-We can connect this with the 
+We can connect this with the energy density per logarithmic interval of wavenumber via the expression (Eq. 17 in our paper):
+
+$$
+\Omega_{\text{GW}}(\tau,k) = \frac{1}{12} \left( \frac{k}{aH} \right)^2 \mathcal{P}_h(\tau,k),
+$$
+
+where $(\mathcal{P}_h(\tau,k))$ is the tensor power spectrum, defined as:
+
+$$
+\mathcal{P}_h(\tau,k) = \frac{k^3}{\pi^2} \left|\bar{h}_k(\tau)\right|^2.
+$$
+
+This equation shows explicitly that the behavior of the mode function $\bar{h}_k$ encodes all the information about how the mass of the graviton affects the observed spectrum today. The energy density spectrum is particularly useful because it can be directly compared to observational limits or detections of a stochastic background like those reported by NANOGrav. I believe most of the analysis done by researchers related to PTAs are actually on the energy density spectrum, or power spectrum, rather than the angular correlation from the overlap reduction function. There are subtle differences between the these various quantities, like energy density, power spectrum, power spectral density, the characteristic strain, etc. See [Moore 2014 [1408.0740]](https://arxiv.org/abs/1408.0740) for a very nice discussion of how all of these are related. Eq. 29 is *especially* useful.  
+
+In our work, we numerically solved the equation of motion for $\bar{h}_k(\tau)$ over a wide range of comoving momenta $k$, using the step-function mass model described earlier. In particular, we used the approximation of the transfer function from [Kuroyanagi et al. 2014 [1407.4785]](https://arxiv.org/abs/1407.4785). We then computed the corresponding energy density spectrum $\Omega_{\text{GW}}(f)$ evaluated today, where $f$ is the present-day frequency related to the comoving wavenumber by the usual redshifting relation:
+
+$$
+f = \frac{k}{2\pi a_0},
+$$
+
+with $a_0 = 1$.
+
+For the subsequent analysis, we would like to know how this spectrum varies with different parameters. We plot the energy density as a function of the the model parameters:
+
+- the graviton mass during the massive phase ($m$),
+- the time when the mass decays to zero ($\tau_m$),
+- and the inflationary Hubble parameter ($H_{\text{inf}}$). 
+
+It looks something like this: (reproduced from Figure 2 of our paper):
+
+<div class="row justify-content-sm-center">
+  <div class="col-sm mt-3 mt-md-0">
+  <center>
+    {% include figure.html path="assets/img/projects/paper_1/fig2.pdf" title="spectrum" class="img-fluid rounded z-depth-1" %}
+  </center>
+  </div>
+</div>
+<div class="caption">
+  Figure 4: Example of the resulting GW energy spectrum in the time-dependent massive gravity model, plotted for the graviton mass, the cutoff time, and the inflationary rate of expansion. The orange regions show the parameter space that is within $1-3\sigma$ of the NANOGrav energy density in the characteristic frequency range. 
+</div>
+
+When the graviton is temporarily massive during inflation or reheating, the resulting spectrum can be strongly *blue-tilted*, meaning that the amplitude increases with frequency. This is in contrast to the nearly scale-invariant (flat) primordial spectrum from massless tensor perturbations in standard inflationary scenarios. The blue-tilted terminology simply comes from the analogous notion of frequencies being blue-shifted because of the Doppler effect. 
+
+## Connecting to NANOGrav
+
+Once we computed the spectrum, we needed to see if it could explain the signal detected by NANOGrav. Recall that the NANOGrav measurement is typically expressed in terms of the *characteristic strain spectrum*, which is related to $\Omega_{\text{GW}}$ by:
+
+$$
+h_c(f) = \sqrt{\frac{3H_0^2}{2\pi^2}} \frac{\Omega_{\text{GW}}(f)^{1/2}}{f},
+$$
+
+where $H_0$ is the present-day Hubble parameter. We converted our results into this form and overlaid them on the NANOGrav posterior for the energy density, as seen in the next figure:
+
+<div class="row justify-content-sm-center">
+  <div class="col-sm mt-3 mt-md-0">
+  <center>
+    {% include figure.html path="assets/img/projects/paper_1/fig3.pdf" title="compare" class="img-fluid rounded z-depth-1" %}
+  </center>
+  </div>
+</div>
+<div class="caption">
+  Figure 5: SGWB produced by the SFM model. Both panels: we show the BBN excluded region shaded in purple at the top, the periodogram for a Hellings-Down-correlated free spectral process in shaded gray, the $1\sigma, 2\sigma,$ and $3\sigma$ posterior medians for NG15 in darker to lighter orange, respectively, and the GWB spectrum produced by an astrophysical population of
+inspiraling SMBHBs as a black dotted line. Top: The red curve is the GWB spectra fitted to the $1\sigma$ posterior, the blue curve is fitted to the $2\sigma$ posterior, and the green curve is fitted to the $3\sigma$ posterior. Bottom: the purple curve is the energy density that respects the BBN bound for high frequency and passes through the upper limit of the free spectral process of the data, and the golden curve is the energy density that respects the CMB bound for low frequency and passes through the lower limit of the free spectral process of the data.
+</div>
+
+## Results
+
+Our main findings can be summarized as follows:
+
+1. **The time-dependent massive graviton scenario predicts a blue-tilted spectrum** that can naturally match the higher-frequency rise in the NANOGrav data.
+2. The model provides a good fit without requiring unrealistically large tensor-to-scalar ratios, staying within bounds imposed by the CMB.
+3. Compared to a purely massless primordial gravitational wave background, the time-dependent mass scenario slightly improves the fit to the NANOGrav data.
+4. However, the improvement in Bayesian evidence is modest, suggesting that while massive gravity can contribute meaningfully to the observed signal, it is not *uniquely* preferred over simpler astrophysical interpretations (like supermassive black hole binaries).
+
+Respect of the different constraints is summarized in the next figure.
+<div class="row justify-content-sm-center">
+  <div class="col-sm mt-3 mt-md-0">
+  <center>
+    {% include figure.html path="assets/img/projects/paper_1/fig4.pdf" title="final" class="img-fluid rounded z-depth-1" %}
+  </center>
+  </div>
+</div>
+<div class="caption">
+  Figure 6: The energy densities plotted over the frequency range from the scale corresponding to matter-radiation inequality ($\sim 3 \times 10^{-16}$ Hz) to the inflationary UV
+cutoff ($\sim 1/(2\pi \tau_r$)). The red, blue, green, purple, and golden curves correspond to the energy densities of the same colors as before. The blue-shaded region on the left is the ex-
+cluded region from the CMB bound. The BBN bound region may be ignored if the graviton remains massive during BBN.
+</div>
+
+Our work shows that time-dependent massive gravity is a viable alternative to astrophysical sources of the SGWBs, but if the gravitational waves were massive when big bang nucleosynthesis takes place, then it turns out that we do not need to respect the BBN bound. However, the CMB bound must still be respected, which our energy densities do. 
+## Outlook
+
+Going forward, there are several directions that could extend this analysis:
+
+- **Non-step-function models:** While our model used a simple step function for $M_{\text{GW}}(\tau)$, a more realistic scenario would include a smooth decay or a parametrically varying mass. We did not have the time in this paper to explore this, but it would be worth investigating. 
+- **Combining datasets:** Future studies could jointly analyze NANOGrav, EPTA, PPTA, CPTA, and IPTA datasets to improve constraints. CPTA claims frequency-dependence in their data, so we may possibly use this to constrain the parameters even more.
+- **Looking into the suppression**. If the GWs aren't massive during BBN, then it must respect the BBN bounds. Three of the energy densities we looked at, the red, blue, and green ones in the last figure, all have their energy densities violating the BBN bound for higher frequencies. This must mean that these modes are suppressed by some mechanism. It could perhaps be due to anisotropic stress perhaps from free-neutrinos, like it was explored in a paper by [Weinberg, 2003 [0306304]](https://arxiv.org/abs/astro-ph/0306304) and my advisor [Kahniashvili et al. 1997 [9702226]](https://arxiv.org/abs/astro-ph/9702226). 
+
+With ever improving observational prospects and improved sensitivies in the power spectra, like in the Square Kilometer Array (SKA) or even LISA, we may soon be able to tell whether signatures of massive gravity are hidden in the stochastic gravitational wave background.
