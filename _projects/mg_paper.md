@@ -176,7 +176,7 @@ It looks something like this: (reproduced from Figure 2 of our paper):
   </div>
 </div>
 <div class="caption">
-  Figure 4: Example of the resulting GW energy spectrum in the time-dependent massive gravity model, plotted for the graviton mass, the cutoff time, and the inflationary rate of expansion. The orange regions show the parameter space that is within $$1-3\sigma$$ of the NANOGrav energy density in the characteristic frequency range. 
+  Figure 4: Example of the resulting GW energy spectrum in the time-dependent massive gravity model, plotted for the graviton mass, the cutoff time, and the inflationary rate of expansion. The orange regions show the parameter space that is within 1-3\sigma of the NANOGrav energy density in the characteristic frequency range. 
 </div>
 
 When the graviton is temporarily massive during inflation or reheating, the resulting spectrum can be strongly *blue-tilted*, meaning that the amplitude increases with frequency. This is in contrast to the nearly scale-invariant (flat) primordial spectrum from massless tensor perturbations in standard inflationary scenarios. The blue-tilted terminology simply comes from the analogous notion of frequencies being blue-shifted because of the Doppler effect. 
@@ -216,8 +216,6 @@ Respect of the different constraints is summarized in the next figure.
   <div class="col-sm mt-3 mt-md-0">
   <center>
   <object data="assets/img/projects/paper_1/fig4.pdf" type="application/pdf" width="100%" height="600px">
-  <p>Your browser does not support embedded PDFs. 
-        <a href="assets/img/projects/paper_1/fig4.pdf">Download the PDF</a> instead.</p>
     </object>
   </center>
   </div>
