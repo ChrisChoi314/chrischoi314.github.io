@@ -144,7 +144,7 @@ $$
 \Omega_{\text{GW}}(\tau,k) = \frac{1}{12} \left( \frac{k}{aH} \right)^2 \mathcal{P}_h(\tau,k),
 $$
 
-where $(\mathcal{P}_h(\tau,k))$ is the tensor power spectrum, defined as:
+where $$(\mathcal{P}_h(\tau,k))$$ is the tensor power spectrum, defined as:
 
 $$
 \mathcal{P}_h(\tau,k) = \frac{k^3}{\pi^2} \left|\bar{h}_k(\tau)\right|^2.
@@ -199,8 +199,8 @@ where $$H_0$$ is the present-day Hubble parameter. We converted our results into
   </div>
 </div>
 <div class="caption">
-  Figure 5: SGWB produced by the SFM model. Both panels: we show the BBN excluded region shaded in purple at the top, the periodogram for a Hellings-Down-correlated free spectral process in shaded gray, the $$1\sigma, 2\sigma,$$ and $$3\sigma$$ posterior medians for NG15 in darker to lighter orange, respectively, and the GWB spectrum produced by an astrophysical population of
-inspiraling SMBHBs as a black dotted line. Top: The red curve is the GWB spectra fitted to the $$1\sigma$$ posterior, the blue curve is fitted to the $$2\sigma$$ posterior, and the green curve is fitted to the $$3\sigma$$ posterior. Bottom: the purple curve is the energy density that respects the BBN bound for high frequency and passes through the upper limit of the free spectral process of the data, and the golden curve is the energy density that respects the CMB bound for low frequency and passes through the lower limit of the free spectral process of the data.
+  Figure 5: SGWB produced by the SFM model. Both panels: we show the BBN excluded region shaded in purple at the top, the periodogram for a Hellings-Down-correlated free spectral process in shaded gray, the 1-3 sigma posterior medians for NG15 in darker to lighter orange, respectively, and the GWB spectrum produced by an astrophysical population of
+inspiraling SMBHBs as a black dotted line. Top: The red curve is the GWB spectra fitted to the 1 sigma posterior, the blue curve is fitted to the 2 sigma posterior, and the green curve is fitted to the 3 sigma posterior. Bottom: the purple curve is the energy density that respects the BBN bound for high frequency and passes through the upper limit of the free spectral process of the data, and the golden curve is the energy density that respects the CMB bound for low frequency and passes through the lower limit of the free spectral process of the data.
 </div>
 
 ## Results
@@ -216,13 +216,15 @@ Respect of the different constraints is summarized in the next figure.
   <div class="col-sm mt-3 mt-md-0">
   <center>
   <object data="assets/img/projects/mg_paper/fig4.pdf" type="application/pdf" width="100%" height="600px">
+  <p>Your browser does not support embedded PDFs. 
+        <a href="assets/img/projects/paper_1/fig4.pdf">Download the PDF</a> instead.</p>
     </object>
   </center>
   </div>
 </div>
 <div class="caption">
-  Figure 6: The energy densities plotted over the frequency range from the scale corresponding to matter-radiation inequality ($$\sim 3 \times 10^{-16}$$ Hz) to the inflationary UV
-cutoff ($$\sim 1/(2\pi \tau_r$$)). The red, blue, green, purple, and golden curves correspond to the energy densities of the same colors as before. The blue-shaded region on the left is the ex-
+  Figure 6: The energy densities plotted over the frequency range from the scale corresponding to matter-radiation inequality to the inflationary UV
+cutoff. The red, blue, green, purple, and golden curves correspond to the energy densities of the same colors as before. The blue-shaded region on the left is the ex-
 cluded region from the CMB bound. The BBN bound region may be ignored if the graviton remains massive during BBN.
 </div>
 
