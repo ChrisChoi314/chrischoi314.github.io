@@ -12,9 +12,6 @@ news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
-scholar:
-  sort_by: year
-  order: ascending  # can be either "ascending" or "descending"
 ---
 
 I am a 1st-year PhD student studying Physics at [Carnegie Mellon University](https://www.cmu.edu/), specifically the field of Theoretical Cosmology. I graduated from CMU with a Bachelors of Science in Physics and a minor in Math in 2024. I am currently advised by Prof. [Tina Kahniashvili](https://www.cmu.edu/physics/people/faculty/kahniashvili.html). 
