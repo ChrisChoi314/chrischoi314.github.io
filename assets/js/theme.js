@@ -12,6 +12,7 @@ let setTheme = (theme) => {
   transTheme();
   setHighlight(theme);
   setGiscusTheme(theme);
+  setSearchTheme(theme);
 
   if (theme) {
     document.documentElement.setAttribute("data-theme", theme);
@@ -78,6 +79,17 @@ let setGiscusTheme = (theme) => {
       theme: theme,
     },
   });
+};
+
+let setSearchTheme = (theme) => {
+  const ninjaKeys = document.querySelector("ninja-keys");
+  if (!ninjaKeys) return;
+
+  if (theme === "dark") {
+    ninjaKeys.classList.add("dark");
+  } else {
+    ninjaKeys.classList.remove("dark");
+  }
 };
 
 let transTheme = () => {
