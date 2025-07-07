@@ -67,6 +67,7 @@ let setHighlight = (theme) => {
   }
 };
 
+
 let setGiscusTheme = (theme) => {
   function sendMessage(message) {
     const iframe = document.querySelector("iframe.giscus-frame");
