@@ -2,16 +2,14 @@ github_users:
   - chrischoi314
 
 github_repos:
+  - chrischoi314/graviton_mass_ORF
+  - chrischoi314/polarization
+  - chrischoi314/chrischoi314.github.io
   - chrischoi314/constrain_mass_nanograv_15
   - chrischoi314/constraining_NANOGrav_paper
   - chrischoi314/gw_research
   - chrischoi314/Root-Code
   - chrischoi314/ARPESCode
   - chrischoi314/wca_statistics
-  - sfanxiang/lm
-  - sjviray814/lastnamle
-  - norrisbach/Astrophysics_33467_Project1
-  - ajarteag/astro_p2_gw_arteaga_choi
   - caleb-kahan/BallRevamped4
-
 
