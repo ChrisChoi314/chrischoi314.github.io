@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 group :jekyll_plugins do
-    gem 'classifier-reborn'
+    gem 'classifier-reborn', '~> 2.2'
     gem 'jekyll'
     gem 'jekyll-archives'
     gem 'jekyll-diagrams'
@@ -20,7 +20,7 @@ group :jekyll_plugins do
     gem 'jekyll-twitter-plugin'
     gem 'jemoji'
     gem "json"
-    gem 'mini_racer'
+#    gem 'mini_racer'
     gem 'unicode_utils'
     gem 'webrick'
 end

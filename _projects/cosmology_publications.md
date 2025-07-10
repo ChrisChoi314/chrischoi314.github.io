@@ -18,7 +18,7 @@ The following topics are enumerated in this page.
 - Dark energy (DE)
 - Dark matter. (DM)
 - General relativity (GR) and modified gravity (MG) - includes massive gravity as well
-- Gravitational waves (GWs) theory & observations
+- Gravitational waves (GWs) theory and observations
 - Inflation
 - Isotropy 
 - Large-scale structure (LSS)
@@ -33,17 +33,5 @@ The following topics are enumerated in this page.
 {% include bib_search.html %}
 
 <div class="publications">
-
-{% assign query_parts = "" %}
-{% for y in page.topics %}
-  {% assign query_parts = query_parts | append: 'topic~"' | append: y | append: '"' %}
-  {% unless forloop.last %}
-    {% assign query_parts = query_parts | append: " or " %}
-  {% endunless %}
-{% endfor %}
-
-<p>QUERY DEBUG: "{{ query_parts }}"</p>
-
-{% bibliography -f papers_general -q query_parts %}
 
 </div>
