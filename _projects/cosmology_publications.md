@@ -36,12 +36,14 @@ The following topics are enumerated in this page.
 
 {% assign query_parts = "" %}
 {% for y in page.topics %}
-  {% assign query_parts = query_parts | append: "topic~" | append: y %}
-  {% if forloop.last == false %}
+  {% assign query_parts = query_parts | append: 'topic~"' | append: y | append: '"' %}
+  {% unless forloop.last %}
     {% assign query_parts = query_parts | append: " or " %}
-  {% endif %}
+  {% endunless %}
 {% endfor %}
 
-{% bibliography -f papers_general -q "@*[{{ query_parts }}]*" %}
+<p>QUERY DEBUG: "{{ query_parts }}"</p>
+
+{% bibliography -f papers_general -q query_parts %}
 
 </div>
