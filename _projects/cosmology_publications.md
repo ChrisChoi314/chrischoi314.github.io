@@ -29,11 +29,12 @@ topics: ['Axions', 'Beyond standard model (BSM)', 'Big-bang-nucleosynthesis (BBN
   </select>
 </div>
 
+<div id="bib-nav-top" class="bib-nav"></div>
+
 <ul id="bib-list">
   {% bibliography -f papers %}
 </ul>
 
-<div id="bib-nav-top" class="bib-nav"></div>
 <div id="bib-nav"      class="bib-nav"></div>
 
 <!-- ───────────────────────── CSS ─────────────────────────────── -->
