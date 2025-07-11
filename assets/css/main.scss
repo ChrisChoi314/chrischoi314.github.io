@@ -19,4 +19,14 @@ $max-content-width: {{ site.max_width }};
   "font-awesome/regular"
 ;
 
+/* center the page‑number buttons and let them wrap nicely */
+#bib-nav,
+#bib-nav-top{
+  display:flex;
+  flex-wrap:wrap;           /* buttons wrap on small screens */
+  justify-content:center;   /* centered horizontally */
+  gap:0.25rem;              /* even spacing between buttons */
+  margin:0.75rem 0;         /* a little breathing room above/below */
+}
+
 .unloaded { display: none !important; }

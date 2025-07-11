@@ -56,13 +56,27 @@ The following topics are enumerated in this page.
 document.addEventListener('DOMContentLoaded', () => {
   /* ---------- original pagination --------- */
   const perPageSelect = document.getElementById('per-page');
-  const bibItems      = Array.from(document.querySelectorAll('#bib-list li'));
-  const nav           = document.getElementById('bib-nav');
+const bibItems      = Array.from(document.querySelectorAll('#bib-list li'));
+
+const bibOL = document.querySelector('#bib-list ol');   // ordered‑list element
+
+
+/* two nav bars: one already in the HTML (#bib-nav),
+   one we create and insert above the list                */
+const navBottom = document.getElementById('bib-nav');
+const navTop    = document.createElement('div');
+navTop.id = 'bib-nav-top';
+navTop.className = navBottom.className || '';     // copy any styling class
+bibItems[0].parentNode.parentNode.insertBefore(navTop, bibItems[0].parentNode);
+
 
   let perPage     = +perPageSelect.value;
   let currentPage = 1;
 
   function showPage(page) {
+    const globalStart = (page - 1) * perPage + 1;  // first item’s global number
+    if (bibOL) bibOL.start = globalStart;          // tell the <ol> where to begin
+
     const start = (page - 1) * perPage;
     const end   = page * perPage;
     bibItems.forEach((item, idx) => {
@@ -72,17 +86,48 @@ document.addEventListener('DOMContentLoaded', () => {
     buildNav();
   }
 
-  function buildNav() {
-    nav.innerHTML = '';
-    const totalPages = Math.ceil(bibItems.length / perPage);
-    for (let i = 1; i <= totalPages; i++) {
-      const btn = document.createElement('button');
-      btn.textContent = i;
-      btn.disabled    = (i === currentPage);
-      btn.addEventListener('click', () => showPage(i));
-      nav.appendChild(btn);
+function buildNav() {
+  const totalPages = Math.ceil(bibItems.length / perPage);
+  if (totalPages === 0) { navTop.innerHTML = navBottom.innerHTML = ''; return; }
+
+  /* helper to build one bar */
+  const fillBar = bar => {
+    bar.innerHTML = '';
+
+    const addBtn = (label, page, disabled = false) => {
+      const b = document.createElement('button');
+      b.textContent = label;
+      b.disabled    = disabled;
+      if (!disabled) b.addEventListener('click', () => showPage(page));
+      bar.appendChild(b);
+    };
+    const addDots = () => { const dots = document.createElement('span'); dots.textContent = '…'; bar.appendChild(dots); };
+
+    /* decide which 10 pages to show */
+    let start = Math.max(1, currentPage - 4);
+    let end   = start + 9;
+    if (end > totalPages) { end = totalPages; start = Math.max(1, end - 9); }
+
+    /* first‑page jump */
+    if (start > 1) {
+      addBtn('«1', 1);
+      if (start > 2) addDots();
     }
-  }
+
+    /* main block */
+    for (let p = start; p <= end; p++) addBtn(String(p), p, p === currentPage);
+
+    /* last‑page jump */
+    if (end < totalPages) {
+      if (end < totalPages - 1) addDots();
+      addBtn('»' + totalPages, totalPages);
+    }
+  };
+
+  /* render both bars */
+  fillBar(navTop);
+  fillBar(navBottom);
+}
 
   perPageSelect.addEventListener('change', () => {
     perPage = +perPageSelect.value;

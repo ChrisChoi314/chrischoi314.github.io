@@ -1,105 +1,90 @@
+
 import { highlightSearchTerm } from "./highlight-search-term.js";
 
-document.addEventListener("DOMContentLoaded", function () {
-  // actual bibsearch logic
+document.addEventListener("DOMContentLoaded", () => {
+  /* -----------------------------------------------------------
+   *  Collapse a topic block (<section class="topic">) if there are
+   *  NO visible bibliography entries inside it.
+   * ----------------------------------------------------------- */
+  const hideEmptyTopics = () => {
+    document.querySelectorAll("section.topic").forEach((section) => {
+      /* Any <li> or <dt> inside this topic that is NOT .unloaded ? */
+      const visible = section.querySelector(
+        ".bibliography li:not(.unloaded), .bibliography dt:not(.unloaded)"
+      );
+      section.classList.toggle("unloaded", !visible);
+    });
+  };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  /* -----------------------------------------------------------
+   *  The existing search / filter logic
+   * ----------------------------------------------------------- */
   const filterItems = (searchTerm) => {
-    document.querySelectorAll(".bibliography, .unloaded").forEach((element) => element.classList.remove("unloaded"));
+    /* reset */
+    document
+      .querySelectorAll(".bibliography, .unloaded")
+      .forEach((el) => el.classList.remove("unloaded"));
 
-
-
-
-    // highlight-search-term
+    /* 1) highlight + mark non‑matches ------------------------- */
     if (CSS.highlights) {
-      const nonMatchingElements = highlightSearchTerm({ search: searchTerm, selector: ".bibliography > li" });
-      if (nonMatchingElements == null) {
-        return;
-      }
-      nonMatchingElements.forEach((element) => {
-        element.classList.add("unloaded");
+      const nonMatches = highlightSearchTerm({
+        search: searchTerm,
+        selector: ".bibliography > li",
       });
-
-
+      if (nonMatches == null) return;
+      nonMatches.forEach((el) => el.classList.add("unloaded"));
     } else {
-      // Simply add unloaded class to all non-matching items if Browser does not support CSS highlights
-      document.querySelectorAll(".bibliography > li").forEach((element, index) => {
-        const text = element.innerText.toLowerCase();
-        if (text.indexOf(searchTerm) == -1) {
-          element.classList.add("unloaded");
+      document.querySelectorAll(".bibliography > li").forEach((el) => {
+        if (!el.innerText.toLowerCase().includes(searchTerm)) {
+          el.classList.add("unloaded");
         }
       });
     }
 
-    document.querySelectorAll("h2.bibliography").forEach(function (element) {
-      let iterator = element.nextElementSibling; // get next sibling element after h2, which can be h3 or ol
-      let hideFirstGroupingElement = true;
-      // iterate until next group element (h2), which is already selected by the querySelectorAll(-).forEach(-)
-      while (iterator && iterator.tagName !== "H2") {
-        if (iterator.tagName === "OL") {
-          const ol = iterator;
-          const unloadedSiblings = ol.querySelectorAll(":scope > li.unloaded");
-          const totalSiblings = ol.querySelectorAll(":scope > li");
+    /* 2) hide empty YEAR groups (your original H2 logic) ------ */
+    document.querySelectorAll("h2.bibliography").forEach((h2) => {
+      let iter = h2.nextElementSibling;
+      let hideFirstGroup = true;
 
-          if (unloadedSiblings.length === totalSiblings.length) {
-            ol.previousElementSibling.classList.add("unloaded"); // Add the '.unloaded' class to the previous grouping element (e.g. year)
-            ol.classList.add("unloaded"); // Add the '.unloaded' class to the OL itself
+      while (iter && iter.tagName !== "H2") {
+        if (iter.tagName === "OL") {
+          const total = iter.querySelectorAll(":scope > li").length;
+          const hidden = iter.querySelectorAll(":scope > li.unloaded").length;
 
-
-
-
-
+          if (hidden === total) {
+            iter.previousElementSibling.classList.add("unloaded");
+            iter.classList.add("unloaded");
           } else {
-            hideFirstGroupingElement = false; // there is at least some visible entry, don't hide the first grouping element
+            hideFirstGroup = false;
           }
         }
-        iterator = iterator.nextElementSibling;
+        iter = iter.nextElementSibling;
       }
-      // Add unloaded class to first grouping element (e.g. year) if no item left in this group
-      if (hideFirstGroupingElement) {
-        element.classList.add("unloaded");
-      }
-
+      if (hideFirstGroup) h2.classList.add("unloaded");
     });
 
-
-
+    /* 3) NEW: hide empty TOPIC blocks ------------------------ */
+    hideEmptyTopics();
   };
 
-
-
-
-
+  /* -----------------------------------------------------------
+   *  Wire up the input / hash‑change events
+   * ----------------------------------------------------------- */
+  const searchBox = document.getElementById("bibsearch");
 
   const updateInputField = () => {
-    const hashValue = decodeURIComponent(window.location.hash.substring(1)); // Remove the '#' character
-    document.getElementById("bibsearch").value = hashValue;
-    filterItems(hashValue);
+    const hash = decodeURIComponent(window.location.hash.slice(1));
+    searchBox.value = hash;
+    filterItems(hash.toLowerCase());
   };
 
-  // Sensitive search. Only start searching if there's been no input for 300 ms
-  let timeoutId;
-  document.getElementById("bibsearch").addEventListener("input", function () {
-    clearTimeout(timeoutId); // Clear the previous timeout
-    const searchTerm = this.value.toLowerCase();
-    timeoutId = setTimeout(filterItems(searchTerm), 300);
+  let debounce;
+  searchBox.addEventListener("input", () => {
+    clearTimeout(debounce);
+    debounce = setTimeout(() => filterItems(searchBox.value.toLowerCase()), 300);
   });
 
-  window.addEventListener("hashchange", updateInputField); // Update the filter when the hash changes
+  window.addEventListener("hashchange", updateInputField);
 
-  updateInputField(); // Update filter when page loads
+  updateInputField(); // run on page load
 });
