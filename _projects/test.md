@@ -14,7 +14,5 @@ importance: 1
 {% bibliography %}
 
 <h2>Show by Year</h2>
-{% bibliography -f papers -q @*[keywords=Lorentz] %}
-
-
+{% bibliography -f papers -q @*[keywords~="Lorentza"] %}
 </div>
