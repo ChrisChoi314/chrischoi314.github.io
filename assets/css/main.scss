@@ -29,4 +29,28 @@ $max-content-width: {{ site.max_width }};
   margin:0.75rem 0;         /* a little breathing room above/below */
 }
 
+/* chips ---------------------------------------------------*/
+.chip-box          { display:flex; flex-wrap:wrap; gap:.4rem; }
+.chip-box.chosen   { margin-top:.6rem; }
+
+.chip {
+  display:inline-flex; align-items:center; gap:.25em;
+  padding:.25em .6em; border-radius:1rem; font-size:.875rem;
+  background:#e5e5e5; cursor:pointer; user-select:none;
+  transition:background .15s;
+}
+.chip:hover        { background:#d0d0d0; }
+.chip.chosen       { background:#6495ed; color:#fff; }
+.chip .close       { font-size:.8em; margin-left:.25em; }
+
+/* hide helpers -------------------------------------------*/
+.hidden, .tag‑filtered { display:none !important; }
+
+/* tiny “nuke” button -------------------------------------*/
+.clear-chips {
+  margin-left:.75rem; padding:.15rem .45rem;
+  border-radius:50%; line-height:1; cursor:pointer;
+}
+
+
 .unloaded { display: none !important; }

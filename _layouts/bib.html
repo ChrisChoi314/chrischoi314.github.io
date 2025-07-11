@@ -1,7 +1,10 @@
 ---
 ---
 <!-- _layouts/bib.html -->
-
+<li id="{{entry.key}}"
+    {% if entry.keywords %}
+      data-topics="{{ entry.keywords | join: ',' | downcase }}"
+    {% endif %}>
       <div class="row">
         {%- if site.enable_publication_thumbnails -%}
         <div class="col-sm-2 {% if entry.preview %}preview{% else %}abbr{% endif %}">
@@ -238,3 +241,4 @@
       </div>
         </div>
       </div>
+    </li>
