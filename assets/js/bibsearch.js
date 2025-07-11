@@ -1,58 +1,71 @@
+/* bibsearch.js  –  live filter + hide empty topic & year blocks */
 import { highlightSearchTerm } from "./highlight-search-term.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  /* -----------------------------------------------------------
-   *  Collapse a topic block (<section class="topic">) if there are
-   *  NO visible bibliography entries inside it.
-   * ----------------------------------------------------------- */
-  const hideEmptyTopics = () => {
-    document.querySelectorAll("section.topic").forEach((section) => {
-      /* Any <li> or <dt> inside this topic that is NOT .unloaded ? */
-      const visible = section.querySelector(
-        ".bibliography li:not(.unloaded), .bibliography dt:not(.unloaded)"
-      );
-      section.classList.toggle("unloaded", !visible);
-    });
-  };
+  /* ────────────────────────────────────────────────────────────
+   *  1)  Hide a topic heading + its list (+ <hr>) when empty
+   * ──────────────────────────────────────────────────────────── */
+  function hideEmptyTopics() {
+    document.querySelectorAll(".publications h3").forEach((h3) => {
+      /* find the first sibling that is the bibliography list */
+      let list = h3.nextElementSibling;
+      while (list && !list.classList?.contains("bibliography")) {
+        list = list.nextElementSibling;
+      }
+      if (!list) return;                // safety guard
 
-  /* -----------------------------------------------------------
-   *  The existing search / filter logic
-   * ----------------------------------------------------------- */
-  const filterItems = (searchTerm) => {
-    /* reset */
+      /* check for ANY direct child that is not .unloaded */
+      const visibleChild = list.querySelector(":scope > *:not(.unloaded)");
+      const empty = !visibleChild;
+
+      h3.classList.toggle("unloaded", empty);
+      list.classList.toggle("unloaded", empty);
+
+      /* hide following <hr>, if present */
+      const hr = list.nextElementSibling;
+      if (hr && hr.tagName === "HR") {
+        hr.classList.toggle("unloaded", empty);
+      }
+    });
+  }
+
+  /* ────────────────────────────────────────────────────────────
+   *  2)  Main filtering routine
+   * ──────────────────────────────────────────────────────────── */
+  function filterItems(term) {
+    /* reset any previous hiding */
     document
-      .querySelectorAll(".bibliography, .unloaded")
+      .querySelectorAll(".unloaded, .bibliography")
       .forEach((el) => el.classList.remove("unloaded"));
 
-    /* 1) highlight + mark non‑matches ------------------------- */
+    /* mark non‑matching bibliography entries (direct children) */
+    const selector = ".bibliography > *";          // li, dt, whatever
+
     if (CSS.highlights) {
-      const nonMatches = highlightSearchTerm({
-        search: searchTerm,
-        selector: ".bibliography > li",
-      });
-      if (nonMatches == null) return;
+      const nonMatches = highlightSearchTerm({ search: term, selector });
+      if (nonMatches === null) return;
       nonMatches.forEach((el) => el.classList.add("unloaded"));
     } else {
-      document.querySelectorAll(".bibliography > li").forEach((el) => {
-        if (!el.innerText.toLowerCase().includes(searchTerm)) {
+      document.querySelectorAll(selector).forEach((el) => {
+        if (!el.innerText.toLowerCase().includes(term)) {
           el.classList.add("unloaded");
         }
       });
     }
 
-    /* 2) hide empty YEAR groups (your original H2 logic) ------ */
+    /* ── hide empty YEAR groups (if you still have year headings) ── */
     document.querySelectorAll("h2.bibliography").forEach((h2) => {
       let iter = h2.nextElementSibling;
       let hideFirstGroup = true;
 
       while (iter && iter.tagName !== "H2") {
-        if (iter.tagName === "OL") {
-          const total = iter.querySelectorAll(":scope > li").length;
-          const hidden = iter.querySelectorAll(":scope > li.unloaded").length;
+        if (iter.classList?.contains("bibliography")) {
+          const total  = iter.querySelectorAll(":scope > *").length;
+          const hidden = iter.querySelectorAll(":scope > *.unloaded").length;
 
-          if (hidden === total) {
-            iter.previousElementSibling.classList.add("unloaded");
-            iter.classList.add("unloaded");
+          if (total === hidden) {
+            iter.previousElementSibling?.classList.add("unloaded"); // year sub‑heading
+            iter.classList.add("unloaded");                         // the list itself
           } else {
             hideFirstGroup = false;
           }
@@ -62,28 +75,32 @@ document.addEventListener("DOMContentLoaded", () => {
       if (hideFirstGroup) h2.classList.add("unloaded");
     });
 
-    /* 3) NEW: hide empty TOPIC blocks ------------------------ */
+    /* ── NEW: hide empty topic blocks ── */
     hideEmptyTopics();
-  };
+  }
 
-  /* -----------------------------------------------------------
-   *  Wire up the input / hash‑change events
-   * ----------------------------------------------------------- */
+  /* ────────────────────────────────────────────────────────────
+   *  3)  Input box & hash <-> filter sync
+   * ──────────────────────────────────────────────────────────── */
   const searchBox = document.getElementById("bibsearch");
 
-  const updateInputField = () => {
-    const hash = decodeURIComponent(window.location.hash.slice(1));
+  const applyFilterFromHash = () => {
+    const hash = decodeURIComponent(location.hash.slice(1));
     searchBox.value = hash;
     filterItems(hash.toLowerCase());
   };
 
+  /* debounce: 300 ms after last keystroke */
   let debounce;
   searchBox.addEventListener("input", () => {
     clearTimeout(debounce);
-    debounce = setTimeout(() => filterItems(searchBox.value.toLowerCase()), 300);
+    debounce = setTimeout(
+      () => filterItems(searchBox.value.toLowerCase()),
+      300
+    );
   });
 
-  window.addEventListener("hashchange", updateInputField);
+  window.addEventListener("hashchange", applyFilterFromHash);
 
-  updateInputField(); // run on page load
+  applyFilterFromHash();   // run once at page load
 });
