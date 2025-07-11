@@ -30,7 +30,6 @@ topics: ['Axions', 'Beyond standard model (BSM)', 'Big-bang-nucleosynthesis (BBN
 </div>
 
 <div id="bib-nav-top" class="bib-nav"></div>
-
 <ul id="bib-list">
   {% bibliography -f papers %}
 </ul>
@@ -68,6 +67,7 @@ topics: ['Axions', 'Beyond standard model (BSM)', 'Big-bang-nucleosynthesis (BBN
 <!-- ───────────────────────── JS ──────────────────────────────── -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    const bibList = document.getElementById('bib-list');
 /* ========== 0.  Grab stuff ========== */
 const allTopics = {{ page.topics | jsonify }};          // from front‑matter
 const boxAvail  = document.getElementById('available-tags');
@@ -115,11 +115,19 @@ clearBtn.addEventListener('click',()=>[...boxChosen.children].forEach(unchoose))
 /* ========== 2.  Tag filter + search filter ========== */
 const bibItems = Array.from(document.querySelectorAll('#bib-list li'));
 
+
 function tagMatch(li){
-  if(selected.size===0) return true;
-  const liTags=(li.dataset.topics||'').split(',').map(s=>s.trim().toLowerCase());
-  return [...selected].every(t=>liTags.includes(t));
+  if (selected.size === 0) return true;
+
+  // NEW: grab data-topics either from the <li> itself or the inner .entry-body
+  const topicAttr = li.dataset.topics
+                 || li.querySelector('[data-topics]')?.dataset.topics
+                 || '';
+
+  const liTags = topicAttr.split(',').map(s => s.trim().toLowerCase());
+  return [...selected].every(t => liTags.includes(t));
 }
+
 function updateFilter(){
   bibItems.forEach(li=>{
     li.classList.toggle('tag‑filtered',!tagMatch(li));
@@ -128,46 +136,92 @@ function updateFilter(){
 }
 document.addEventListener('bibsearch:results-updated', updateFilter);
 
-/* ========== 3.  Pagination ========== */
-const perPageSelect=document.getElementById('per-page');
-const navTop=document.getElementById('bib-nav-top');
-const navBottom=document.getElementById('bib-nav');
-let perPage=+perPageSelect.value, currentPage=1;
+/* ========== 3.  Pagination (from original) ========== */
+const perPageSelect = document.getElementById('per-page');
+const navTop        = document.getElementById('bib-nav-top');
+const navBottom     = document.getElementById('bib-nav');
+let perPage = +perPageSelect.value, currentPage = 1;
 
-const getVisible=()=>bibItems.filter(li=>!li.classList.contains('search_hidden')&&!li.classList.contains('tag‑filtered'));
+// insert a .num span in each <li> (for numbering)
+bibItems.forEach(li => {
+  if (!li.querySelector('.num')) {
+    const num = document.createElement('span');
+    num.className = 'num';
+    li.insertBefore(num, li.firstChild);
+  }
+});
 
-function showPage(page){
-  const visible=getVisible();
-  const totalPages=Math.max(1,Math.ceil(visible.length/perPage));
-  page=Math.min(page,totalPages);
-
-  const start=(page-1)*perPage, end=page*perPage;
-  visible.forEach((li,i)=>li.style.display=(i>=start&&i<end)?'':'none');
-  [...bibItems].filter(li=>!visible.includes(li)).forEach(li=>li.style.display='none');
-  currentPage=page;
-  buildNav(totalPages);
+// helper: items currently visible (not unloaded by search/tag)
+function getVisible() {
+  return bibItems.filter(li =>
+    !li.classList.contains('unloaded') &&
+    !li.classList.contains('tag-filtered')
+  );
 }
-function buildNav(totalPages){
-  const fill=bar=>{
-    bar.innerHTML='';
-    const add=(txt,p,dis=false)=>{
-      const b=document.createElement('button'); b.textContent=txt; b.disabled=dis;
-      if(!dis) b.onclick=()=>showPage(p);
-      bar.appendChild(b);
-    };
-    if(totalPages===1) return;
-    add('«',1,currentPage===1);
-    for(let p=1;p<=totalPages;p++){
-      if(Math.abs(p-currentPage)<=4||p===1||p===totalPages)
-        add(p,p,p===currentPage);
-      else if(Math.abs(p-currentPage)===5) bar.appendChild(document.createTextNode('…'));
-    }
-    add('»',totalPages,currentPage===totalPages);
+
+// builds one nav bar (top or bottom) given totalPages
+function fillBar(bar, totalPages) {
+  bar.innerHTML = '';
+  const addBtn = (label, page, disabled = false) => {
+    const b = document.createElement('button');
+    b.textContent = label;
+    b.disabled    = disabled;
+    if (!disabled) b.addEventListener('click', () => showPage(page));
+    bar.appendChild(b);
   };
-  [navTop,navBottom].forEach(fill);
+  const addDots = () => bar.appendChild(document.createTextNode('…'));
+
+  if (totalPages <= 1) return;
+
+  let start = Math.max(1, currentPage - 4);
+  let end   = start + 9;
+  if (end > totalPages) {
+    end = totalPages;
+    start = Math.max(1, end - 9);
+  }
+
+  if (start > 1) {
+    addBtn('«1', 1);
+    if (start > 2) addDots();
+  }
+  for (let p = start; p <= end; p++) {
+    addBtn(String(p), p, p === currentPage);
+  }
+  if (end < totalPages) {
+    if (end < totalPages - 1) addDots();
+    addBtn('»' + totalPages, totalPages);
+  }
 }
-function rebuildPagination(){ showPage(1); }
-perPageSelect.addEventListener('change',()=>{ perPage=+perPageSelect.value; rebuildPagination(); });
+
+// core pagination routine
+function showPage(page) {
+  const pool = getVisible();
+  const totalPages = Math.max(1, Math.ceil(pool.length / perPage));
+  currentPage = Math.min(Math.max(1, page), totalPages);
+
+  const sliceStart = (currentPage - 1) * perPage;
+  bibList.style.counterReset = 'paper ' + sliceStart;
+
+  // hide all + clear old numbers
+  bibItems.forEach(li => {
+    li.style.display = 'none';
+    li.querySelector('.num').textContent = '';
+  });
+
+  // show current slice + write new numbers
+  pool.slice(sliceStart, sliceStart + perPage).forEach((li, idx) => {
+    li.style.display = '';
+    li.querySelector('.num').textContent = sliceStart + idx + 1;
+  });
+
+  fillBar(navTop, totalPages);
+  fillBar(navBottom, totalPages);
+}
+
+// wire up per-page selector & initial paint
+perPageSelect.addEventListener('change', () => showPage(1));
+showPage(1);
+
 
 /* ========== 4.  Collapsible Abstract/BibTeX blocks ========== */
 document.querySelectorAll('#bib-list div.abstract, #bib-list div.bibtex')

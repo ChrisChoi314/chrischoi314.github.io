@@ -1,10 +1,10 @@
 ---
 ---
 <!-- _layouts/bib.html -->
-<li id="{{entry.key}}"
-    {% if entry.keywords %}
-      data-topics="{{ entry.keywords | join: ',' | downcase }}"
-    {% endif %}>
+ <div class="entry-body"
+      {% if entry.keywords %}
+        data-topics="{{ entry.keywords | join: ',' | downcase }}"
+      {% endif %}>
       <div class="row">
         {%- if site.enable_publication_thumbnails -%}
         <div class="col-sm-2 {% if entry.preview %}preview{% else %}abbr{% endif %}">
@@ -216,7 +216,8 @@
               {% else %}
                 data-id="{{ entry.dimensions }}"
               {% endif %}
-              data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+              data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;">
+              </span>
             {%- endif %}
           </div>
           {%- endif %}
@@ -224,21 +225,17 @@
 
           {% if entry.abstract -%}
           <!-- Hidden abstract block -->
-          
-          <div class="abstract hidden">
-            <p>{{ entry.abstract }}</p>
-          </div>
+            <div class="abstract hidden">
+              <p>{{ entry.abstract }}</p>
+            </div>
           {%- endif -%}
 
-  
           <!-- Hidden bibtex block -->
-
-      <!-- Hidden bibtex block -->
-      <div class="bibtex hidden">
-        {% highlight bibtex %}
-        {{- entry.bibtex | hideCustomBibtex -}}
-        {% endhighlight %}
-      </div>
+          <div class="bibtex hidden">
+            {% highlight bibtex %}
+            {{- entry.bibtex | hideCustomBibtex -}}
+            {% endhighlight %}
+          </div>
         </div>
       </div>
-    </li>
+</div>
