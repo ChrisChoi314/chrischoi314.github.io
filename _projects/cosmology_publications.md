@@ -73,16 +73,41 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function buildNav() {
-    nav.innerHTML = '';
-    const totalPages = Math.ceil(bibItems.length / perPage);
-    for (let i = 1; i <= totalPages; i++) {
-      const btn = document.createElement('button');
-      btn.textContent = i;
-      btn.disabled    = (i === currentPage);
-      btn.addEventListener('click', () => showPage(i));
-      nav.appendChild(btn);
-    }
+  nav.innerHTML = '';
+  const totalPages = Math.ceil(bibItems.length / perPage);
+  if (totalPages === 0) return;
+
+  /* helpers */
+  const addBtn = (label, page, disabled = false) => {
+    const b = document.createElement('button');
+    b.textContent = label;
+    b.disabled    = disabled;
+    if (!disabled) b.addEventListener('click', () => showPage(page));
+    nav.appendChild(b);
+  };
+  const addDots = () => { const span = document.createElement('span'); span.textContent = '…'; nav.appendChild(span); };
+
+  /* figure out which 10 pages to show */
+  let start = Math.max(1, currentPage - 4);
+  let end   = start + 9;
+  if (end > totalPages) { end = totalPages; start = Math.max(1, end - 9); }
+
+  /* jump‑to‑first / leading dots */
+  if (start > 1) {
+    addBtn('«1', 1);              // first page
+    if (start > 2) addDots();     // ellipsis if we skipped more than one page
   }
+
+  /* main numbered block */
+  for (let p = start; p <= end; p++) addBtn(String(p), p, p === currentPage);
+
+  /* trailing dots / jump‑to‑last */
+  if (end < totalPages) {
+    if (end < totalPages - 1) addDots();
+    addBtn('»' + totalPages, totalPages);  // last page
+  }
+}
+
 
   perPageSelect.addEventListener('change', () => {
     perPage = +perPageSelect.value;
