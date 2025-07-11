@@ -33,6 +33,23 @@ The following topics are enumerated in this page.
 
 {% include bib_search.html %}
 
+<!-- ────────────  keyword filter UI  ──────────── -->
+<div class="keyword-filter">
+  <select id="topic-select">
+    <option value="" disabled selected>Select a topic …</option>
+    {% for t in page.topics %}
+      <option value="{{ t }}">{{ t }}</option>
+    {% endfor %}
+  </select>
+
+  <!-- pills for active filters will appear here -->
+  <div id="selected-topics"></div>
+
+  <!-- clear‑all button (hidden when nothing selected) -->
+  <button id="clear-topics" style="display:none;">✖ Clear all</button>
+</div>
+
+
 <div class="bibliography-controls">
   <label for="per-page">Papers per page:</label>
   <select id="per-page">
@@ -52,15 +69,45 @@ The following topics are enumerated in this page.
   .hidden { display: none; }
 </style>
 
+<style>
+.keyword-filter { margin-bottom: 1rem; }
+#selected-topics .pill {
+  display:inline-block; margin:.2em .35em; padding:.15em .55em;
+  background:#e0e0e0; border-radius:1em; font-size:.85em; position:relative;
+}
+#selected-topics .pill .close {
+  margin-left:.45em; cursor:pointer; font-weight:bold;
+}
+</style>
+
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   /* --------- core DOM refs (unchanged) --------- */
   const perPageSelect = document.getElementById('per-page');
-  const bibItems      = Array.from(document.querySelectorAll('#bib-list li'));
+  const bibItems = Array.from(document.querySelectorAll('#bib-list li'));
+
+/* --- add a <span class="num"> to each row (only once) --- */
+bibItems.forEach(li => {
+  if (!li.querySelector('.num')) {
+    const num = document.createElement('span');
+    num.className = 'num';
+    li.insertBefore(num, li.firstChild);
+  }
+});
+
+
 
   /* two nav bars */
   const navBottom = document.getElementById('bib-nav');      // already in HTML
   const navTop    = document.createElement('div');           // we create this one
+
+ /* ──── NEW: elements for topic filtering ──── */
+  const topicSelect   = document.getElementById('topic-select');
+  const selectedBox   = document.getElementById('selected-topics');
+  const clearBtn      = document.getElementById('clear-topics');
+  const selectedTopics = new Set();
+
   navTop.id = 'bib-nav-top';
   navTop.className = navBottom.className || '';
   // put the top bar right above #bib-list
@@ -73,10 +120,65 @@ document.addEventListener('DOMContentLoaded', () => {
   /* current settings */
   let perPage     = +perPageSelect.value;
   let currentPage = 1;
+  let inTopicFilter = false;    // prevent infinite observer loops
 
   /* --------- helper: items currently visible (i.e., not .unloaded) --------- */
   const getVisibleItems = () =>
     bibItems.filter(li => !li.classList.contains('unloaded'));
+
+/* ──── helper: update pills UI ──── */
+  function refreshPills() {
+    selectedBox.innerHTML = '';
+    selectedTopics.forEach(t => {
+      const pill = document.createElement('span');
+      pill.className = 'pill';
+      pill.textContent = t;
+      const x = document.createElement('span');
+      x.className = 'close';
+      x.textContent = '×';
+      x.addEventListener('click', () => { selectedTopics.delete(t); applyTopicFilter(); });
+      pill.appendChild(x);
+      selectedBox.appendChild(pill);
+    });
+    clearBtn.style.display = selectedTopics.size ? '' : 'none';
+  }
+
+  /* ──── helper: (re)apply topic filter ──── */
+  function applyTopicFilter() {
+  inTopicFilter = true;       // ⟵ NEW
+
+  const active = Array.from(selectedTopics).map(t => t.toLowerCase());
+  bibItems.forEach(li => {
+    const kw = (li.dataset.keywords || '')
+                 .toLowerCase()
+                 .split(',')
+                 .map(s => s.trim());    // keep your .trim() fix
+    const matches = active.every(a => kw.includes(a));
+    li.classList.toggle('unloaded', !matches);
+  });
+  refreshPills();
+
+  inTopicFilter = false;      // ⟵ NEW
+}
+
+
+
+  /* ──── select‑menu event ──── */
+  topicSelect.addEventListener('change', () => {
+    const val = topicSelect.value;
+    if (val && !selectedTopics.has(val)) {
+      selectedTopics.add(val);
+      applyTopicFilter();              // sets .unloaded and triggers observer
+    }
+    topicSelect.selectedIndex = 0;     // reset dropdown label
+  });
+
+  /* ──── clear‑all event ──── */
+  clearBtn.addEventListener('click', () => {
+    selectedTopics.clear();
+    applyTopicFilter();                // show everything again
+  });
+
 
   /* --------- fill one nav bar (called twice) --------- */
   function fillBar(bar, totalPages) {
@@ -106,31 +208,55 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------- main renderer --------- */
-  function showPage(page) {
-    const pool       = getVisibleItems();
-    const totalPages = Math.max(1, Math.ceil(pool.length / perPage));
+ function showPage(page) {
+  const pool       = getVisibleItems();
+  const totalPages = Math.max(1, Math.ceil(pool.length / perPage));
 
-    /* clamp + store page */
-    currentPage = Math.min(Math.max(1, page), totalPages);
+  currentPage = Math.min(Math.max(1, page), totalPages);
 
-    /* slice visible pool */
-    const sliceStart = (currentPage - 1) * perPage;
-    const sliceEnd   = sliceStart + perPage;
+  const sliceStart = (currentPage - 1) * perPage;
+  const sliceEnd   = sliceStart + perPage;
 
-    /* hide all, then show the slice */
-    bibItems.forEach(li => li.style.display = 'none');
-    pool.slice(sliceStart, sliceEnd).forEach(li => (li.style.display = ''));
+  //* —— hide everything & clear old numbers —— */
+bibItems.forEach(li => {
+  li.style.display = 'none';
+  li.querySelector('.num').textContent = '';
+});
 
-    /* global numbering relative to the *visible* pool */
-    if (bibOL && pool.length) {
-    bibOL.start = sliceStart + 1;   // e.g. 1, 21, 41, … after filtering
+/* —— show just the slice, write correct global index —— */
+pool.slice(sliceStart, sliceEnd).forEach((li, idx) => {
+  li.style.display = '';
+  li.querySelector('.num').textContent = sliceStart + idx + 1;
+});
+
+
+  /* ---- set the <ol> start attribute (for accessibility) ---- */
+  if (bibOL && pool.length) bibOL.start = sliceStart + 1;
+
+  /* ---- rebuild nav bars ---- */
+  fillBar(navTop, totalPages);
+  fillBar(navBottom, totalPages);
+}
+
+
+  /* ----------------------------------------------- */
+    /*  keep topic filter in force after each search   */
+    /* ----------------------------------------------- */
+    const searchInput =
+        document.querySelector('#search') ||          // common id in bib_search.html
+        document.querySelector('input[type="search"]');
+
+    if (searchInput) {
+    searchInput.addEventListener('input', () => {
+        /* wait till bib_search has finished toggling .unloaded,
+        then re‑apply the topic logic                      */
+        setTimeout(() => {
+        applyTopicFilter();   // restore pill filter
+        showPage(1);          // rebuild pagination from the *intersection*
+        }, 0);                  // 0 ms = run right after current event loop tick
+    });
     }
 
-
-    /* rebuild both nav bars */
-    fillBar(navTop, totalPages);
-    fillBar(navBottom, totalPages);
-  }
 
   /* --------- events --------- */
   perPageSelect.addEventListener('change', () => {
@@ -139,7 +265,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* watch for search filter toggling .unloaded */
-  const observer = new MutationObserver(() => showPage(1));
+  const observer = new MutationObserver(() => {
+  if (!inTopicFilter) {       // ignore mutations we ourselves just triggered
+    applyTopicFilter();       // restore topic constraints
+    showPage(1);              // rebuild page list from the intersection
+  }
+});
+
   bibItems.forEach(li => observer.observe(li, { attributes: true, attributeFilter: ['class'] }));
 
   /* initial paint */
