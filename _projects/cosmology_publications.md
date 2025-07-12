@@ -62,6 +62,16 @@ topics: ['Axions', 'Beyond standard model (BSM)', 'Big-bang-nucleosynthesis (BBN
 /* nav buttons */
 .bib-nav { margin:1rem 0; display:flex; flex-wrap:wrap; gap:.4rem; }
 .bib-nav button { padding:.2rem .55rem; }
+
+/* — make the bib-plugin’s <a class="… btn"> links show their borders & padding */
+#bib-list a.btn {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid currentColor;
+  border-radius: 0.25rem;
+  text-decoration: none;
+}
+
 </style>
 
 <!-- ───────────────────────── JS ──────────────────────────────── -->
@@ -130,9 +140,9 @@ function tagMatch(li){
 
 function updateFilter(){
   bibItems.forEach(li=>{
-    li.classList.toggle('tag‑filtered',!tagMatch(li));
+    li.classList.toggle('tag-filtered', !tagMatch(li));
   });
-  rebuildPagination();
+ showPage(1);
 }
 document.addEventListener('bibsearch:results-updated', updateFilter);
 
