@@ -19,18 +19,22 @@
             zoomable=false
             alt=entry.preview -%}
           {%- endif -%}
-        {%- elsif entry.journal -%}
-          {%- if site.data.venues[entry.journal] -%}
-            {%- assign venue_style = nil -%}
-            {%- if site.data.venues[entry.journal].color != blank -%}
-              {%- assign venue_style = site.data.venues[entry.journal].color | prepend: 'style="background-color:' | append: '"' -%}
-            {%- endif -%}
-            <journal class="badge" {% if venue_style %}{{venue_style}}{% endif %}><a href="{{site.data.venues[entry.journal].url}}">{{entry.journal}}</a></journal>
-          {%- else -%}
-            <journal class="badge">{{entry.journal}}</journal>
-          {%- endif -%}
+       {%- elsif entry.journal -%}
+  {%- if site.data.venues[entry.journal] -%}
+    {%- assign venue_style = site.data.venues[entry.journal].color
+        | prepend: 'style="background-color:'
+        | append: ' !important;"' -%}
+    <journal class="badge" {{ venue_style }}>
+     {{ entry.journal }}
+    </journal>
+  {%- else -%}
+    <journal class="badge" style="background-color:#e0e0e0 !important; color:#000;">
+      {{ entry.journal }}
+    </journal>
+  {%- endif -%}
+
         {%- else -%}
-          <journal class="badge">arXiv</journal>
+          <journal class="badge" style="background-color:#b31b1b !important; color:#f9f7f7;">arXiv</journal>
         {%- endif -%}
         </div>
         {%- endif -%}

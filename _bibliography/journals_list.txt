@@ -1,0 +1,65 @@
+AAPPS Bull.
+AIP Conf. Proc.
+ASP Conf. Ser.
+Adv. Astron.
+Adv. High Energy Phys.
+Ann. Rev. Astron. Astrophys.
+Ann. Rev. Nucl. Part. Sci.
+Astron. Astrophys.
+Astron. Astrophys. Rev.
+Astron. Comput.
+Astron. Lett.
+Astropart. Phys.
+Astrophys. J.
+Astrophys. J. Lett.
+Astrophys. J. Suppl.
+Bull. Am. Astron. Soc.
+Chin. J. Astron. Astrophys. Suppl.
+Chin. J. Phys.
+Chin. Phys. C
+Chin. Phys. Lett.
+Class. Quant. Grav.
+Commun. Theor. Phys.
+Contemp. Phys.
+EPJ Web Conf.
+EPL
+Eur. Phys. J. C
+Eur. Phys. J. Plus
+Eur. Phys. J. ST
+Gen. Rel. Grav.
+Grav. Cosmol.
+IAU Symp.
+Int. J. Mod. Phys. A
+Int. J. Mod. Phys. D
+J. Phys. Conf. Ser.
+J. Phys. G
+JCAP
+JHEAp
+JHEP
+Living Rev. Rel.
+Mod. Phys. Lett. A
+Mon. Not. Roy. Astron. Soc.
+Nature Commun.
+Nature Phys.
+New Astron. Rev.
+Nucl. Phys. B
+Phys. Dark Univ.
+Phys. Lett. B
+Phys. Open
+Phys. Rept.
+Phys. Rev. D
+Phys. Rev. Lett.
+Phys. Rev. Res.
+Phys. Usp.
+PoS
+Prog. Part. Nucl. Phys.
+Prog. Theor. Phys.
+Publ. Astron. Soc. Jap.
+Rept. Prog. Phys.
+Res. Astron. Astrophys.
+Res. Notes AAS
+Results Phys.
+Rev. Mod. Phys.
+Sci. China Phys. Mech. Astron.
+Symmetry
+Universe

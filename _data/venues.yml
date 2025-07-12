@@ -1,6 +1,259 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+"AAPPS Bull.":
+  url: "https://aappsbulletin.org"
+  color: "#0059b3"            # deep blue – AAPPS theme
 
-"PhysRev":
-  url: https://journals.aps.org/
+"AIP Conf. Proc.":
+  url: "https://aip.scitation.org/proceeding/aipcp"
+  color: "#e87722"            # AIP orange
+
+"ASP Conf. Ser.":
+  url: "https://aas.org/series/asp-conf-ser"
+  color: "#00528b"            # AAS navy
+
+"Adv. Astron.":
+  url: "https://www.hindawi.com/journals/aa"
+  color: "#008080"            # teal
+
+"Adv. High Energy Phys.":
+  url: "https://www.hindawi.com/journals/ahep"
+  color: "#4caf50"            # vibrant green
+
+"Ann. Rev. Astron. Astrophys.":
+  url: "https://www.annualreviews.org/journal/astro"
+  color: "#ff5722"            # bold orange
+
+"Ann. Rev. Nucl. Part. Sci.":
+  url: "https://www.annualreviews.org/journal/nucl"
+  color: "#c62828"            # rich red
+
+"Astron. Astrophys.":
+  url: "https://www.aanda.org"
+  color: "#7e57c2"            # royal purple
+
+"Astron. Astrophys. Rev.":
+  url: "https://link.springer.com/journal/40168"
+  color: "#ba68c8"            # lavender
+
+"Astron. Comput.":
+  url: "https://www.journals.elsevier.com/astronomy-and-computing"
+  color: "#64b5f6"            # sky blue
+
+"Astron. Lett.":
+  url: "https://link.springer.com/journal/10511"
+  color: "#ffd54f"            # sunflower yellow
+
+"Astropart. Phys.":
+  url: "https://www.journals.elsevier.com/astroparticle-physics"
+  color: "#ffb300"            # amber
+
+"Astrophys. J.":
+  url: "https://iopscience.iop.org/journal/0004-637X"
+  color: "#c62828"            # classic red
+
+"Astrophys. J. Lett.":
+  url: "https://iopscience.iop.org/journal/2041-8205"
+  color: "#b71c1c"            # deep red
+
+"Astrophys. J. Suppl.":
+  url: "https://iopscience.iop.org/journal/0067-0049"
+  color: "#8e0000"            # dark crimson
+
+"Bull. Am. Astron. Soc.":
+  url: "https://baas.aas.org"
+  color: "#283593"            # deep indigo
+
+"Chin. J. Astron. Astrophys. Suppl.":
+  url: "https://iopscience.iop.org/journal/0253-9837"
+  color: "#c62828"            # Chinese red
+
+"Chin. J. Phys.":
+  url: "https://www.journals.elsevier.com/chinese-journal-of-physics"
+  color: "#a52a2a"            # maroon
+
+"Chin. Phys. C":
+  url: "https://iopscience.iop.org/journal/1674-1056"
+  color: "#ff9800"            # bright orange
+
+"Chin. Phys. Lett.":
+  url: "https://iopscience.iop.org/journal/0256-307X"
+  color: "#d50000"            # intense red
+
+"Class. Quant. Grav.":
+  url: "https://iopscience.iop.org/journal/0264-9381"
+  color: "#fbc02d"            # gold
+
+"Commun. Theor. Phys.":
+  url: "https://iopscience.iop.org/journal/0253-6102"
+  color: "#1976d2"            # cobalt blue
+
+"Contemp. Phys.":
+  url: "https://www.tandfonline.com/toc/tcph20/current"
+  color: "#607d8b"            # slate gray
+
+"EPJ Web Conf.":
+  url: "https://www.epj-conferences.org"
+  color: "#66bb6a"            # fresh green
+
+"EPL":
+  url: "https://iopscience.iop.org/journal/0295-5075"
+  color: "#ff7043"            # coral
+
+"Eur. Phys. J. C":
+  url: "https://link.springer.com/journal/10052"
+  color: "#1976d2"            # deep blue
+
+"Eur. Phys. J. Plus":
+  url: "https://link.springer.com/journal/131"
+  color: "#009688"            # teal
+
+"Eur. Phys. J. ST":
+  url: "https://link.springer.com/journal/229"
+  color: "#303f9f"            # indigo
+
+"Gen. Rel. Grav.":
+  url: "https://link.springer.com/journal/10714"
+  color: "#795548"            # brown
+
+"Grav. Cosmol.":
+  url: "https://link.springer.com/journal/135"
+  color: "#0097a7"            # cyan
+
+"IAU Symp.":
+  url: "https://www.iau.org/science/meetings/symposia/"
+  color: "#8e24aa"            # violet
+
+"Int. J. Mod. Phys. A":
+  url: "https://www.worldscientific.com/worldscinet/ijmpa"
+  color: "#1e88e5"            # azure
+
+"Int. J. Mod. Phys. D":
+  url: "https://www.worldscientific.com/worldscinet/ijmpd"
+  color: "#1565c0"            # navy blue
+
+"J. Phys. Conf. Ser.":
+  url: "https://iopscience.iop.org/journal/1742-6596"
+  color: "#90a4ae"            # steel gray
+
+"J. Phys. G":
+  url: "https://iopscience.iop.org/journal/0954-3899"
+  color: "#388e3c"            # forest green
+
+"JCAP":
+  url: "https://iopscience.iop.org/journal/1475-7516"
+  color: "#ef6c00"            # tangerine
+
+"JHEAp":
+  url: "https://www.journals.elsevier.com/journal-of-high-energy-astrophysics"
+  color: "#6a1b9a"            # deep purple
+
+"JHEP":
+  url: "https://jhep.sissa.it"
+  color: "#ff6d00"            # bright orange
+
+"Living Rev. Rel.":
+  url: "https://link.springer.com/journal/41114"
+  color: "#009688"            # teal
+
+"Mod. Phys. Lett. A":
+  url: "https://www.worldscientific.com/worldscinet/mpla"
+  color: "#e53935"            # vivid red
+
+"Mon. Not. Roy. Astron. Soc.":
+  url: "https://academic.oup.com/mnras"
+  color: "#3f51b5"            # royal blue
+
+"Nature Commun.":
+  url: "https://www.nature.com/ncomms"
+  color: "#2e7d32"            # nature green
+
+"Nature Phys.":
+  url: "https://www.nature.com/nphys"
+  color: "#1b5e20"            # forest dark green
+
+"New Astron. Rev.":
+  url: "https://www.journals.elsevier.com/new-astronomy-reviews"
+  color: "#8e24aa"            # purple
+
+"Nucl. Phys. B":
+  url: "https://www.sciencedirect.com/journal/nuclear-physics-b"
+  color: "#c2185b"            # magenta
+
+"Phys. Dark Univ.":
+  url: "https://www.journals.elsevier.com/physics-of-the-dark-universe"
+  color: "#000000"            # black
+
+"Phys. Lett. B":
+  url: "https://www.sciencedirect.com/journal/physics-letters-b"
+  color: "#1565c0"            # deep blue
+
+"Phys. Open":
+  url: "https://www.sciencedirect.com/journal/physics-open"
+  color: "#8bc34a"            # light green
+
+"Phys. Rept.":
+  url: "https://www.sciencedirect.com/journal/physics-reports"
+  color: "#0097a7"            # teal
+
+"Phys. Rev. D":
+  url: "https://journals.aps.org/prd"
+  color: "#00acc1"            # cyan
+
+"Phys. Rev. Lett.":
+  url: "https://journals.aps.org/prl"
+  color: "#d32f2f"            # red
+
+"Phys. Rev. Res.":
+  url: "https://journals.aps.org/prresearch"
+  color: "#1976d2"            # blue
+
+"Phys. Usp.":
+  url: "https://ufn.ru/en"
+  color: "#006064"            # dark cyan
+
+"PoS":
+  url: "https://pos.sissa.it"
+  color: "#1976d2"            # blue
+
+"Prog. Part. Nucl. Phys.":
+  url: "https://www.sciencedirect.com/journal/progress-in-particle-and-nuclear-physics"
+  color: "#ffa000"            # amber
+
+"Prog. Theor. Phys.":
+  url: "https://academic.oup.com/ptp"
+  color: "#4e342e"            # chocolate
+
+"Publ. Astron. Soc. Jap.":
+  url: "https://academic.oup.com/pasj"
+  color: "#b71c1c"            # crimson
+
+"Rept. Prog. Phys.":
+  url: "https://iopscience.iop.org/journal/0034-4885"
+  color: "#c2185b"            # magenta
+
+"Res. Astron. Astrophys.":
+  url: "https://www.springer.com/journal/11433"
+  color: "#1e88e5"            # blue
+
+"Res. Notes AAS":
+  url: "https://iopscience.iop.org/journal/2515-5172"
+  color: "#b0bec5"            # light gray
+
+"Results Phys.":
+  url: "https://www.journals.elsevier.com/results-in-physics"
+  color: "#0288d1"            # bright blue
+
+"Rev. Mod. Phys.":
+  url: "https://journals.aps.org/rmp"
+  color: "#455a64"            # slate gray
+
+"Sci. China Phys. Mech. Astron.":
+  url: "https://link.springer.com/journal/1674-1137"
+  color: "#e64a19"            # vermilion
+
+"Symmetry":
+  url: "https://www.mdpi.com/journal/symmetry"
+  color: "#5c6bc0"            # indigo
+
+"Universe":
+  url: "https://www.mdpi.com/journal/universe"
+  color: "#283593"            # navy

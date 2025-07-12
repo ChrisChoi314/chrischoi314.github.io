@@ -9,10 +9,7 @@ Usage:
     python extract_journals.py input.bib output.txt
 """
 import sys
-try:
-    import bibtexparser
-except ImportError:
-    sys.exit("Missing bibtexparser. Install with: pip install bibtexparser")
+import bibtexparser
 
 def main(bib_path, out_path):
     # Load the .bib file

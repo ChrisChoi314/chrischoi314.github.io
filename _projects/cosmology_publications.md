@@ -77,6 +77,7 @@ topics: ['Axions', 'Beyond standard model (BSM)', 'Big-bang-nucleosynthesis (BBN
 </style>
 
 <!-- ───────────────────────── JS ──────────────────────────────── -->
+<!-- htmlcompressor ignore:start -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const bibList = document.getElementById('bib-list');
@@ -251,3 +252,4 @@ document.querySelectorAll('#bib-list a.bibtex.btn').forEach(btn=>{
 updateFilter();
 });
 </script>
+<!-- htmlcompressor ignore:end -->

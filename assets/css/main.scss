@@ -52,20 +52,24 @@ $max-content-width: {{ site.max_width }};
   border-radius:50%; line-height:1; cursor:pointer;
 }
 
-/* at the very bottom of assets/css/main.css */
 
-/* ── Light-mode badges ── */
-:root[data-theme="light"] journal.badge,
-:root[data-theme="light"] journal.badge a {
-  background-color: #e0e0e0 !important;
-  color:            #000    !important;
+/* Dark-mode keyword chips */
+:root[data-theme="dark"] .chip {
+  background-color: #444 !important;        /* dark grey base */
+  color:            #ddd !important;        /* light text for contrast */
 }
 
-/* ── Dark-mode badges (reverse) ── */
-:root[data-theme="dark"] journal.badge,
-:root[data-theme="dark"] journal.badge a {
-  background-color: #333 !important;
+:root[data-theme="dark"] .chip.chosen {
+  background-color: #666 !important;        /* slightly lighter for “chosen” state */
   color:            #fff !important;
 }
+
+/* Deep-blue for chosen chips in dark mode */
+:root[data-theme="dark"] .chip.chosen {
+  background-color: #0d47a1 !important;  /* deep navy blue */
+  color:            #fff    !important;  /* white text */
+}
+
+
 
 .unloaded { display: none !important; }

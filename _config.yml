@@ -248,20 +248,20 @@ jekyll-minifier:
   uglifier_args:
     harmony: true
 
+
 # -----------------------------------------------------------------------------
 # Jekyll Archives
 # -----------------------------------------------------------------------------
 
 jekyll-archives:
-  enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
+  enabled: [year, categories]         # ← tags removed
   layouts:
-    year: archive-year
-    tag: archive-tag
+    year:     archive-year
     category: archive-category
   permalinks:
-    year: '/blog/:year/'
-    tag: '/blog/tag/:name/'
+    year:     '/blog/:year/'
     category: '/blog/category/:name/'
+
 
 display_tags: ['physics', 'math', 'prog', 'vegan', 'philosophy', 'cubing', 'misc'] # these tags will be displayed on the front page of your blog
 display_categories: [] # these categories will be displayed on the front page of your blog
