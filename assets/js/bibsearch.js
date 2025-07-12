@@ -1,1 +1,90 @@
-import{highlightSearchTerm}from"./highlight-search-term.js";document.addEventListener("DOMContentLoaded",()=>{const e=()=>{document.querySelectorAll("section.topic").forEach(e=>{const l=e.querySelector(".bibliography li:not(.unloaded), .bibliography dt:not(.unloaded)");e.classList.toggle("unloaded",!l)})},l=l=>{if(document.querySelectorAll(".bibliography, .unloaded").forEach(e=>e.classList.remove("unloaded")),CSS.highlights){const e=highlightSearchTerm({search:l,selector:".bibliography > li"});if(null==e)return;e.forEach(e=>e.classList.add("unloaded"))}else document.querySelectorAll(".bibliography > li").forEach(e=>{e.innerText.toLowerCase().includes(l)||e.classList.add("unloaded")});document.querySelectorAll("h2.bibliography").forEach(e=>{let l=e.nextElementSibling,o=!0;for(;l&&"H2"!==l.tagName;){if("OL"===l.tagName){const e=l.querySelectorAll(":scope > li").length;l.querySelectorAll(":scope > li.unloaded").length===e?(l.previousElementSibling.classList.add("unloaded"),l.classList.add("unloaded")):o=!1}l=l.nextElementSibling}o&&e.classList.add("unloaded")}),e()},o=document.getElementById("bibsearch"),t=()=>{const e=decodeURIComponent(window.location.hash.slice(1));o.value=e,l(e.toLowerCase())};let i;o.addEventListener("input",()=>{clearTimeout(i),i=setTimeout(()=>l(o.value.toLowerCase()),300)}),window.addEventListener("hashchange",t),t()});
+
+import { highlightSearchTerm } from "./highlight-search-term.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  /* -----------------------------------------------------------
+   *  Collapse a topic block (<section class="topic">) if there are
+   *  NO visible bibliography entries inside it.
+   * ----------------------------------------------------------- */
+  const hideEmptyTopics = () => {
+    document.querySelectorAll("section.topic").forEach((section) => {
+      /* Any <li> or <dt> inside this topic that is NOT .unloaded ? */
+      const visible = section.querySelector(
+        ".bibliography li:not(.unloaded), .bibliography dt:not(.unloaded)"
+      );
+      section.classList.toggle("unloaded", !visible);
+    });
+  };
+
+  /* -----------------------------------------------------------
+   *  The existing search / filter logic
+   * ----------------------------------------------------------- */
+  const filterItems = (searchTerm) => {
+    /* reset */
+    document
+      .querySelectorAll(".bibliography, .unloaded")
+      .forEach((el) => el.classList.remove("unloaded"));
+
+    /* 1) highlight + mark non‑matches ------------------------- */
+    if (CSS.highlights) {
+      const nonMatches = highlightSearchTerm({
+        search: searchTerm,
+        selector: ".bibliography > li",
+      });
+      if (nonMatches == null) return;
+      nonMatches.forEach((el) => el.classList.add("unloaded"));
+    } else {
+      document.querySelectorAll(".bibliography > li").forEach((el) => {
+        if (!el.innerText.toLowerCase().includes(searchTerm)) {
+          el.classList.add("unloaded");
+        }
+      });
+    }
+
+    /* 2) hide empty YEAR groups (your original H2 logic) ------ */
+    document.querySelectorAll("h2.bibliography").forEach((h2) => {
+      let iter = h2.nextElementSibling;
+      let hideFirstGroup = true;
+
+      while (iter && iter.tagName !== "H2") {
+        if (iter.tagName === "OL") {
+          const total = iter.querySelectorAll(":scope > li").length;
+          const hidden = iter.querySelectorAll(":scope > li.unloaded").length;
+
+          if (hidden === total) {
+            iter.previousElementSibling.classList.add("unloaded");
+            iter.classList.add("unloaded");
+          } else {
+            hideFirstGroup = false;
+          }
+        }
+        iter = iter.nextElementSibling;
+      }
+      if (hideFirstGroup) h2.classList.add("unloaded");
+    });
+
+    /* 3) NEW: hide empty TOPIC blocks ------------------------ */
+    hideEmptyTopics();
+  };
+
+  /* -----------------------------------------------------------
+   *  Wire up the input / hash‑change events
+   * ----------------------------------------------------------- */
+  const searchBox = document.getElementById("bibsearch");
+
+  const updateInputField = () => {
+    const hash = decodeURIComponent(window.location.hash.slice(1));
+    searchBox.value = hash;
+    filterItems(hash.toLowerCase());
+  };
+
+  let debounce;
+  searchBox.addEventListener("input", () => {
+    clearTimeout(debounce);
+    debounce = setTimeout(() => filterItems(searchBox.value.toLowerCase()), 300);
+  });
+
+  window.addEventListener("hashchange", updateInputField);
+
+  updateInputField(); // run on page load
+});
