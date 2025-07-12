@@ -244,7 +244,9 @@ sass:
 # -----------------------------------------------------------------------------
 
 jekyll-minifier:
-  js: false       # ← add this line to disable all JS minification
+  html: true      # keep minifying HTML
+  css:  true      # keep minifying CSS
+  js:   false     # ← turn OFF JavaScript minification
   exclude: ['robots.txt', "assets/js/search/*.js"]
   uglifier_args:
     harmony: true
