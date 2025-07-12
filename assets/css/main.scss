@@ -52,4 +52,20 @@ $max-content-width: {{ site.max_width }};
   border-radius:50%; line-height:1; cursor:pointer;
 }
 
+/* at the very bottom of assets/css/main.css */
+
+/* ── Light-mode badges ── */
+:root[data-theme="light"] journal.badge,
+:root[data-theme="light"] journal.badge a {
+  background-color: #e0e0e0 !important;
+  color:            #000    !important;
+}
+
+/* ── Dark-mode badges (reverse) ── */
+:root[data-theme="dark"] journal.badge,
+:root[data-theme="dark"] journal.badge a {
+  background-color: #333 !important;
+  color:            #fff !important;
+}
+
 .unloaded { display: none !important; }

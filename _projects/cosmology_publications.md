@@ -67,7 +67,9 @@ topics: ['Axions', 'Beyond standard model (BSM)', 'Big-bang-nucleosynthesis (BBN
 #bib-list a.btn {
   display: inline-block;
   padding: 0.2rem 0.5rem;
-  border: 1px solid currentColor;
+  border: 1px solid currentColor !important;
+  color: inherit !important;
+  background-color: transparent !important;
   border-radius: 0.25rem;
   text-decoration: none;
 }
