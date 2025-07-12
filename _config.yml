@@ -219,7 +219,6 @@ plugins:
   - jekyll-imagemagick
   - jekyll-jupyter-notebook
   - jekyll-link-attributes
-  - jekyll-minifier
   - jekyll-paginate-v2
   - jekyll-regex-replace
   - jekyll/scholar
@@ -242,14 +241,6 @@ sass:
 # -----------------------------------------------------------------------------
 # Jekyll Minifier
 # -----------------------------------------------------------------------------
-
-jekyll-minifier:
-  html: true      # keep minifying HTML
-  css:  true      # keep minifying CSS
-  js:   false     # ← turn OFF JavaScript minification
-  exclude: ['robots.txt', "assets/js/search/*.js"]
-  uglifier_args:
-    harmony: true
 
 
 # -----------------------------------------------------------------------------
