@@ -20,3 +20,30 @@ nav_order: 1
 {%- endfor %}
 
 </div>
+
+{% raw %}
+<!-- ——— enable Abs / Bib toggle on this page ——— -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* Abs button */
+  document.querySelectorAll('.links .abstract').forEach(btn =>
+    btn.addEventListener('click', () => {
+      const blk = btn.closest('.entry-body').querySelector('div.abstract');  // <-- NB: div!
+      blk.classList.toggle('open');
+      blk.classList.toggle('hidden');
+    })
+  );
+
+  /* Bib button */
+  document.querySelectorAll('.links .bibtex').forEach(btn =>
+    btn.addEventListener('click', () => {
+      const blk = btn.closest('.entry-body').querySelector('div.bibtex');    // <-- NB: div!
+      blk.classList.toggle('open');
+      blk.classList.toggle('hidden');
+    })
+  );
+
+});
+</script>
+{% endraw %}

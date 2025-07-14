@@ -15,6 +15,8 @@ news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
+scripts:
+  - /assets/js/publications.js
 ---
 
 I am a 1st-year PhD student studying Physics at [Carnegie Mellon University](https://www.cmu.edu/), specifically the field of Theoretical Cosmology. I graduated from CMU with a Bachelors of Science in Physics and a minor in Math in 2024. I am currently advised by Prof. [Tina Kahniashvili](https://www.cmu.edu/physics/people/faculty/kahniashvili.html). 
@@ -30,3 +32,30 @@ I enjoy reading hard sci-fi novels and short stories, such as those by Greg Egan
 ## Research Interests
 
 My research explores how we can utilize the theory of gravitational waves to explore and constrain theoretical cosmology models, particularly massive gravity. I also utilize pulsar timing array data to gain information about the gravitational wave background, and potentially explain it with new theories of cosmology and gravity. In the recent past, my group used a time-dependent model of massive gravity, specifically one known as the minimal theory of massive gravity, to explain the stochastic gravitational wave background detected by NANOGrav in their 15-year dataset. There is a possibility that its source is of cosmological origin, because the astrophysical explanation falls short of being able to explain the background. I am also interested in the ways gravitational waves can be altered by free-streaming neutrinos, something I previously investigated. We explored the possibility of establishing a particular damping amplitude and comparing the results with previous work. Currently, I am working on analyzing the additional polarization modes from massive gravity and how it modifies the overlap reduction function.
+
+{% raw %}
+<!-- ——— enable Abs / Bib toggle on this page ——— -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* Abs button */
+  document.querySelectorAll('.links .abstract').forEach(btn =>
+    btn.addEventListener('click', () => {
+      const blk = btn.closest('.entry-body').querySelector('div.abstract');  // <-- NB: div!
+      blk.classList.toggle('open');
+      blk.classList.toggle('hidden');
+    })
+  );
+
+  /* Bib button */
+  document.querySelectorAll('.links .bibtex').forEach(btn =>
+    btn.addEventListener('click', () => {
+      const blk = btn.closest('.entry-body').querySelector('div.bibtex');    // <-- NB: div!
+      blk.classList.toggle('open');
+      blk.classList.toggle('hidden');
+    })
+  );
+
+});
+</script>
+{% endraw %}
