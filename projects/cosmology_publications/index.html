@@ -57671,12 +57671,50 @@ function tagMatch(li){
   return [...selected].every(t => liTags.includes(t));
 }
 
-function updateFilter(){
-  bibItems.forEach(li=>{
+function updateFilter () {
+  /* -----------------------------------------------------------
+   * 1) tag filtering  (what you already had)
+   * --------------------------------------------------------- */
+  bibItems.forEach(li => {
     li.classList.toggle('tag-filtered', !tagMatch(li));
   });
- showPage(1);
+
+  /* -----------------------------------------------------------
+   * 2) highlight “Abs” / “Bib” buttons when the _match_
+   *    is hidden inside their blocks
+   * --------------------------------------------------------- */
+  // clear any previous highlight
+  document.querySelectorAll('#bib-list .links a.search-hit')
+          .forEach(b => b.classList.remove('search-hit'));
+
+  const searchTerm = document
+        .getElementById('bibsearch')    // the search-box input
+        .value.trim().toLowerCase();
+
+  if (searchTerm) {
+    bibItems.forEach(li => {
+      const absText = li.querySelector('.abstract')?.textContent
+                        .toLowerCase() || '';
+      const bibText = li.querySelector('.bibtex')?.textContent
+                        .toLowerCase() || '';
+
+      if (absText.includes(searchTerm)) {
+        li.querySelectorAll('.links a.abstract')
+          .forEach(b => b.classList.add('search-hit'));
+      }
+      if (bibText.includes(searchTerm)) {
+        li.querySelectorAll('.links a.bibtex')
+          .forEach(b => b.classList.add('search-hit'));
+      }
+    });
+  }
+
+  /* -----------------------------------------------------------
+   * 3) pagination repaint
+   * --------------------------------------------------------- */
+  showPage(1);
 }
+
 document.addEventListener('bibsearch:results-updated', updateFilter);
 
 /* ========== 3.  Pagination (from original) ========== */
@@ -57779,38 +57817,41 @@ document.querySelectorAll('#bib-list a.bibtex.btn').forEach(btn=>{
 });
 
 /* ========== 4½.  Highlight Abs / Bib buttons on search ========== */
+
+/* grab whichever input the bib_search include created */
+const searchInput = document.querySelector(
+  '#bibsearch,  #bib-search,  input[name="bibsearch"]'
+);
+
+/* runs after every search-refresh */
 function highlightButtons() {
   /* 1) clear old hits */
   document.querySelectorAll('.links a.search-hit')
-          .forEach(b=>b.classList.remove('search-hit'));
+          .forEach(b => b.classList.remove('search-hit'));
 
-  const term = (document.getElementById('bibsearch')?.value || '')
-                .trim().toLowerCase();
-  if(!term) return;
+  const term = (searchInput?.value || '').trim().toLowerCase();
+  if (!term) return;                               // nothing to do
 
-  bibItems.forEach(li=>{
+  bibItems.forEach(li => {
     const absTxt = li.querySelector('.abstract')?.textContent.toLowerCase() || '';
     const bibTxt = li.querySelector('.bibtex')  ?.textContent.toLowerCase() || '';
 
-    if(absTxt.includes(term)){
+    if (absTxt.includes(term)) {
       li.querySelectorAll('.links a.abstract')
-        .forEach(b=>b.classList.add('search-hit'));
+        .forEach(b => b.classList.add('search-hit'));
     }
-    if(bibTxt.includes(term)){
+    if (bibTxt.includes(term)) {
       li.querySelectorAll('.links a.bibtex')
-        .forEach(b=>b.classList.add('search-hit'));
+        .forEach(b => b.classList.add('search-hit'));
     }
   });
 }
 
-/* fire whenever the search box changes OR the page hash changes */
-const bibSearchBox = document.getElementById('bibsearch');
-if (bibSearchBox){
-  bibSearchBox.addEventListener('input', ()=>{ clearTimeout(bibSearchBox._deb);
-    bibSearchBox._deb = setTimeout(highlightButtons,250); });
-  window.addEventListener('hashchange', highlightButtons);
-}
+/* 2) Hook into the *same* event your page already uses */
+document.addEventListener('bibsearch:results-updated', highlightButtons);
 
+/* 3) First pass on page-load */
+highlightButtons();
 
 /* kick things off */
 updateFilter();
