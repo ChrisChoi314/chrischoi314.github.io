@@ -57,21 +57,11 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       if (nonMatches == null) return;
       nonMatches.forEach((el) => el.classList.add("unloaded"));
-    }
-    
-      /* NEW → grab whatever colour the mark/highlight is using
-   *        and store it in a CSS variable every time we run. */
-  const firstHit = document.querySelector("mark, ::highlight(search-hit)");
-  if (firstHit) {
-    document.documentElement.style.setProperty(
-      "--bibsearch-hit-bg",
-      getComputedStyle(firstHit).backgroundColor
-    );
-  } else {
-    document.querySelectorAll(".bibliography > li").forEach((el) => {
-      if (!el.innerText.toLowerCase().includes(searchTerm)) {
-        el.classList.add("unloaded");
-      }
+    } else {
+      document.querySelectorAll(".bibliography > li").forEach((el) => {
+        if (!el.innerText.toLowerCase().includes(searchTerm)) {
+          el.classList.add("unloaded");
+        }
       });
     }
 

@@ -45,11 +45,15 @@
     </script>
 
     <style>
-/* --- Abs / Bib button highlight ----------------------------------- */
+/* — highlight for Abs / Bib buttons — */
 .bibsearch-hit{
-  background: var(--bibsearch-hit-bg, #ff9ac1) !important; /* default = pink */
-  color: var(--bibsearch-hit-fg, #000) !important;
+  background: var(--highlight-bg-light, #b80cac) !important;
+  color: var(--highlight-fg-dark, #000) !important;
 }
+[data-theme="dark"] .bibsearch-hit{
+  background: var(--highlight-bg-dark,  #289cbc) !important;
+}
+
 
     </style>
 
