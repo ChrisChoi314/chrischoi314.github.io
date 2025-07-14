@@ -87,7 +87,13 @@ a.btn.search-hit{
 @media (prefers-color-scheme:dark){
   a.btn.search-hit{ background:var(--hit-dark) !important; }
 }
+:root               { --hit-bg-light:#ffe0ec; --hit-fg-light:#c2185b; }
+html.dark           { --hit-bg-light:#004b9a; --hit-fg-light:#ffffff; }
 
+a.search-hit {            /* override MDB/Bootstrap .btn */
+  background:var(--hit-bg-light) !important;
+  color:      var(--hit-fg-light) !important;
+}
 
 </style>
 
@@ -341,6 +347,46 @@ highlightButtons();
 
 /* kick things off */
 updateFilter();
+
+
+
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: *
+ *  REPLACEMENT updateFilter()  — drop-in, no other edits needed   *
+ * :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+function updateFilter(evt) {
+
+  /* 1) tag-chip filtering (your original logic) */
+  bibItems.forEach(li =>
+    li.classList.toggle('tag-filtered', !tagMatch(li))
+  );
+
+  /* 2) fresh search term (from event, else from input field) */
+  const term = (evt?.detail?.search ||      // highlight-search-term passes this
+                document.getElementById('bibsearch')?.value || '')
+               .trim().toLowerCase();
+
+  /* ––– clear any previous highlight ––– */
+  document.querySelectorAll('#bib-list a.search-hit')
+          .forEach(a => a.classList.remove('search-hit'));
+
+  if (term) {                        // nothing to do on empty search
+    bibItems.forEach(li => {
+      const abs = li.querySelector('.abstract')?.textContent.toLowerCase() || '';
+      const bib = li.querySelector('.bibtex') ?.textContent.toLowerCase() || '';
+
+      if (abs.includes(term))
+        li.querySelectorAll('.links a.abstract')
+           .forEach(a => a.classList.add('search-hit'));
+
+      if (bib.includes(term))
+        li.querySelectorAll('.links a.bibtex')
+           .forEach(a => a.classList.add('search-hit'));
+    });
+  }
+
+  /* 3) pagination repaint */
+  showPage(1);
+}
 });
 </script>
 <!-- htmlcompressor ignore:end -->
