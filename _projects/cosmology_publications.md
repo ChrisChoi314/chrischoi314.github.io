@@ -79,6 +79,50 @@ topics: ['Axions', 'Beyond standard model (BSM)', 'Big-bang-nucleosynthesis (BBN
 
 <!-- ───────────────────────── JS ──────────────────────────────── -->
 <!-- htmlcompressor ignore:start -->
+
+{% raw %}
+<!-- helper that lights up Abs / Bib buttons when bibsearch finds matches -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  /* --------------------------------------------------
+   *  add / remove the .btn-highlight class depending
+   *  on where a term matched (title, abstract, bibtex)
+   * -------------------------------------------------- */
+  const highlightButtons = (term = '') => {
+    term = term.trim().toLowerCase();
+    document.querySelectorAll('.links').forEach(block => {
+      const absBtn = block.querySelector('.abstract');
+      const bibBtn = block.querySelector('.bibtex');
+
+      [absBtn, bibBtn].forEach(btn => btn?.classList.remove('btn-highlight'));
+
+      if (!term) return;
+
+      const entry  = block.closest('li, dt');
+      const absDiv = entry?.querySelector('.abstract');
+      const bibDiv = entry?.querySelector('.bibtex');
+
+      if (absDiv && absDiv.textContent.toLowerCase().includes(term))
+        absBtn?.classList.add('btn-highlight');
+
+      if (bibDiv && bibDiv.textContent.toLowerCase().includes(term))
+        bibBtn?.classList.add('btn-highlight');
+    });
+  };
+
+  /* hook into the existing bibsearch field ------------------ */
+  const input = document.getElementById('bibsearch');
+  if (!input) return;
+
+  const run = () => highlightButtons(input.value);
+  input.addEventListener('input', run);
+  window.addEventListener('hashchange', run);
+  run();                 // run once on load
+});
+</script>
+{% endraw %}
+
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const bibList = document.getElementById('bib-list');
