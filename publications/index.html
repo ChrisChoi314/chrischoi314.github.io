@@ -49,11 +49,15 @@
     </script>
 
     <style>
-/* --- Abs / Bib button highlight ----------------------------------- */
+/* — highlight for Abs / Bib buttons — */
 .bibsearch-hit{
-  background: var(--bibsearch-hit-bg, #ff9ac1) !important; /* default = pink */
-  color: var(--bibsearch-hit-fg, #000) !important;
+  background: var(--highlight-bg-light, #b80cac) !important;
+  color: var(--highlight-fg-dark, #000) !important;
 }
+[data-theme="dark"] .bibsearch-hit{
+  background: var(--highlight-bg-dark,  #289cbc) !important;
+}
+
 
     </style>
 
@@ -232,7 +236,7 @@
     <!-- _pages/publications.md -->
 <!-- Bibsearch Feature -->
 
-<script src="/assets/js/bibsearch.js?a0257734c700619439a7baf0188a7525" type="module"></script>
+<script src="/assets/js/bibsearch.js?21366013afc918bc6a36ca6242e6ea94" type="module"></script>
 
 <p><input type="text" id="bibsearch" spellcheck="false" autocomplete="off" class="search bibsearch-form-input" placeholder="Type to filter"></p>
 
