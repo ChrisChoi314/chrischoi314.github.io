@@ -48,7 +48,6 @@
         initTheme();
     </script>
     
-
   </head>
 
   <!-- Body -->
@@ -226,6 +225,9 @@
 
 <p><input type="text" id="bibsearch" spellcheck="false" autocomplete="off" class="search bibsearch-form-input" placeholder="Type to filter"></p>
 
+<!-- _includes/bibsearch-extra.html -->
+<script defer src="/assets/js/bibsearch_button_highlight.js"></script>
+
 <div class="publications">
   <h2 class="year">2025</h2>
   <ol class="bibliography"><li>
@@ -387,7 +389,33 @@ making the graviton mass cutoff time too deep into the matter-dominated era.</p>
 
 </div>
 
-  </article><script src="/assets/js/publications.js"></script>
+<!-- ——— enable Abs / Bib toggle on this page ——— -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* Abs button */
+  document.querySelectorAll('.links .abstract').forEach(btn =>
+    btn.addEventListener('click', () => {
+      const blk = btn.closest('.entry-body').querySelector('div.abstract');  // <-- NB: div!
+      blk.classList.toggle('open');
+      blk.classList.toggle('hidden');
+    })
+  );
+
+  /* Bib button */
+  document.querySelectorAll('.links .bibtex').forEach(btn =>
+    btn.addEventListener('click', () => {
+      const blk = btn.closest('.entry-body').querySelector('div.bibtex');    // <-- NB: div!
+      blk.classList.toggle('open');
+      blk.classList.toggle('hidden');
+    })
+  );
+
+});
+</script>
+
+
+  </article>
 </div>
 
       
