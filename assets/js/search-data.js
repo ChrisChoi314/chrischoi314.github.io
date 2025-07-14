@@ -47,7 +47,14 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-fto-kinchranks",
+        },{id: "post-rebuttal-to-tingman-39-s-video",
+      title: "Rebuttal to Tingman&#39;s Video",
+      description: "religious apologetics rebuttal",
+      section: "Posts",
+      handler: () => {
+        window.location.href = "/blog/2025/rebuttal-tingman/";
+      },
+    },{id: "post-fto-kinchranks",
       title: "FTO Kinchranks",
       description: "rankings for FTOers for all time formats",
       section: "Posts",
