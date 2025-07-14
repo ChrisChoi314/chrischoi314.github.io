@@ -75,6 +75,20 @@ topics: ['Axions', 'Beyond standard model (BSM)', 'Big-bang-nucleosynthesis (BBN
   text-decoration: none;
 }
 
+/* ── highlight colour for Abs / Bib buttons ──────────────────── */
+:root{
+  --hit-light:#ff4d85;     /* light-mode pink  */
+  --hit-dark :#4da8ff;     /* dark-mode blue   */
+}
+a.btn.search-hit{
+  color:#fff !important;                  /* keep text white in dark-mode */
+  background:var(--hit-light) !important;
+}
+@media (prefers-color-scheme:dark){
+  a.btn.search-hit{ background:var(--hit-dark) !important; }
+}
+
+
 </style>
 
 <!-- ───────────────────────── JS ──────────────────────────────── -->
@@ -249,6 +263,40 @@ document.querySelectorAll('#bib-list a.bibtex.btn').forEach(btn=>{
   const block=btn.closest('li').querySelector('div.bibtex');
   if(block) btn.addEventListener('click',e=>{e.preventDefault();block.classList.toggle('hidden');});
 });
+
+/* ========== 4½.  Highlight Abs / Bib buttons on search ========== */
+function highlightButtons() {
+  /* 1) clear old hits */
+  document.querySelectorAll('.links a.search-hit')
+          .forEach(b=>b.classList.remove('search-hit'));
+
+  const term = (document.getElementById('bibsearch')?.value || '')
+                .trim().toLowerCase();
+  if(!term) return;
+
+  bibItems.forEach(li=>{
+    const absTxt = li.querySelector('.abstract')?.textContent.toLowerCase() || '';
+    const bibTxt = li.querySelector('.bibtex')  ?.textContent.toLowerCase() || '';
+
+    if(absTxt.includes(term)){
+      li.querySelectorAll('.links a.abstract')
+        .forEach(b=>b.classList.add('search-hit'));
+    }
+    if(bibTxt.includes(term)){
+      li.querySelectorAll('.links a.bibtex')
+        .forEach(b=>b.classList.add('search-hit'));
+    }
+  });
+}
+
+/* fire whenever the search box changes OR the page hash changes */
+const bibSearchBox = document.getElementById('bibsearch');
+if (bibSearchBox){
+  bibSearchBox.addEventListener('input', ()=>{ clearTimeout(bibSearchBox._deb);
+    bibSearchBox._deb = setTimeout(highlightButtons,250); });
+  window.addEventListener('hashchange', highlightButtons);
+}
+
 
 /* kick things off */
 updateFilter();
