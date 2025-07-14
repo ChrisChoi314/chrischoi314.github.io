@@ -11,7 +11,7 @@ nav_order: 1
 <!-- Bibsearch Feature -->
 
 {% include bib_search.html %}
-{% include bibsearch_extra.html %}
+<script src="{{ '/assets/js/bibsearch_button_highlight.js' | relative_url }}"></script>
 
 <div class="publications">
 
