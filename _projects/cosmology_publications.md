@@ -253,3 +253,7 @@ updateFilter();
 });
 </script>
 <!-- htmlcompressor ignore:end -->
+
+{% raw %}
+<script defer src="{{ '/assets/js/bibsearch-button-highlight.js' | relative_url }}"></script>
+{% endraw %}

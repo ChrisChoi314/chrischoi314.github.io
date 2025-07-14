@@ -47,3 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 {% endraw %}
+
+{% raw %}
+<script defer src="{{ '/assets/js/bibsearch-button-highlight.js' | relative_url }}"></script>
+{% endraw %}
