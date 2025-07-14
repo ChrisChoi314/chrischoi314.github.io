@@ -18,6 +18,7 @@ topics: ['Axions', 'Beyond standard model (BSM)', 'Big-bang-nucleosynthesis (BBN
 </div>
 
 {% include bib_search.html %}
+{% include bibsearch_extra.html %}
 
 <!-- ───────────────────── Pagination selector ────────────────── -->
 <div class="bibliography-controls">
@@ -253,7 +254,3 @@ updateFilter();
 });
 </script>
 <!-- htmlcompressor ignore:end -->
-
-{% raw %}
-<script defer src="{{ '/assets/js/bibsearch-button-highlight.js' | relative_url }}"></script>
-{% endraw %}

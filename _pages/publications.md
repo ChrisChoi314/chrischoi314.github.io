@@ -11,6 +11,7 @@ nav_order: 1
 <!-- Bibsearch Feature -->
 
 {% include bib_search.html %}
+{% include bibsearch_extra.html %}
 
 <div class="publications">
 
@@ -46,8 +47,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 </script>
-{% endraw %}
-
-{% raw %}
-<script defer src="{{ '/assets/js/bibsearch-button-highlight.js' | relative_url }}"></script>
 {% endraw %}
