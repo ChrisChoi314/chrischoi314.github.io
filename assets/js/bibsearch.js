@@ -1,4 +1,4 @@
-
+/* bibsearch.js  ── with built-in “highlight Abs / Bib buttons” support */
 import { highlightSearchTerm } from "./highlight-search-term.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -17,31 +17,72 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   /* -----------------------------------------------------------
-   *  The existing search / filter logic
+   *  NEW ► helper to flash the Abs / Bib buttons
+   * ----------------------------------------------------------- */
+  const highlightButtons = (li, re, className) => {
+    const absBtn = li.querySelector("a.abstract");
+    const bibBtn = li.querySelector("a.bibtex");
+
+    /* strip prior state */
+    absBtn?.classList.remove(className);
+    bibBtn?.classList.remove(className);
+
+    const absTxt = li.querySelector("div.abstract")?.textContent || "";
+    const bibTxt = li.querySelector("div.bibtex")?.textContent || "";
+
+    if (absBtn && re.test(absTxt)) absBtn.classList.add(className);
+    if (bibBtn && re.test(bibTxt)) bibBtn.classList.add(className);
+  };
+
+  /* -----------------------------------------------------------
+   *  The search / filter logic  (modified)
    * ----------------------------------------------------------- */
   const filterItems = (searchTerm) => {
     /* reset */
+    document.querySelectorAll('.bibsearch-hit')
+            .forEach(btn => btn.classList.remove('bibsearch-hit'));
     document
       .querySelectorAll(".bibliography, .unloaded")
       .forEach((el) => el.classList.remove("unloaded"));
 
-    /* 1) highlight + mark non‑matches ------------------------- */
+    /* regex we’ll re-use for the button-flash step -------------- */
+    const re = searchTerm ? new RegExp(searchTerm, "i") : null;
+
+    /* 1) highlight + mark non-matches --------------------------- */
+    let nonMatches;
     if (CSS.highlights) {
-      const nonMatches = highlightSearchTerm({
+      nonMatches = highlightSearchTerm({
         search: searchTerm,
         selector: ".bibliography > li",
       });
       if (nonMatches == null) return;
       nonMatches.forEach((el) => el.classList.add("unloaded"));
-    } else {
-      document.querySelectorAll(".bibliography > li").forEach((el) => {
-        if (!el.innerText.toLowerCase().includes(searchTerm)) {
-          el.classList.add("unloaded");
-        }
+    }
+    
+      /* NEW → grab whatever colour the mark/highlight is using
+   *        and store it in a CSS variable every time we run. */
+  const firstHit = document.querySelector("mark, ::highlight(search-hit)");
+  if (firstHit) {
+    document.documentElement.style.setProperty(
+      "--bibsearch-hit-bg",
+      getComputedStyle(firstHit).backgroundColor
+    );
+  } else {
+    document.querySelectorAll(".bibliography > li").forEach((el) => {
+      if (!el.innerText.toLowerCase().includes(searchTerm)) {
+        el.classList.add("unloaded");
+      }
       });
     }
 
-    /* 2) hide empty YEAR groups (your original H2 logic) ------ */
+    /* 1-b) ► flash the Abs / Bib buttons if query hits hidden text */
+    if (re) {
+      document.querySelectorAll(".bibliography > li").forEach((li) =>
+        highlightButtons(li, re, "bibsearch-hit")
+      );
+    }
+
+    /* 2) hide empty YEAR groups (your original H2 logic) -------- */
     document.querySelectorAll("h2.bibliography").forEach((h2) => {
       let iter = h2.nextElementSibling;
       let hideFirstGroup = true;
@@ -63,12 +104,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (hideFirstGroup) h2.classList.add("unloaded");
     });
 
-    /* 3) NEW: hide empty TOPIC blocks ------------------------ */
+    /* 3) NEW: hide empty TOPIC blocks -------------------------- */
     hideEmptyTopics();
   };
 
   /* -----------------------------------------------------------
-   *  Wire up the input / hash‑change events
+   *  Wire up the input / hash-change events
    * ----------------------------------------------------------- */
   const searchBox = document.getElementById("bibsearch");
 

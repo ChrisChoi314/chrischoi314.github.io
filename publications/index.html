@@ -47,6 +47,17 @@
     <script>
         initTheme();
     </script>
+
+    <style>
+/* --- Abs / Bib button highlight ----------------------------------- */
+.bibsearch-hit{
+  background: var(--bibsearch-hit-bg, #ff9ac1) !important; /* default = pink */
+  color: var(--bibsearch-hit-fg, #000) !important;
+}
+
+    </style>
+
+    
     
   </head>
 
@@ -221,12 +232,11 @@
     <!-- _pages/publications.md -->
 <!-- Bibsearch Feature -->
 
-<script src="/assets/js/bibsearch.js?589e2c29d299b240388a48e44a8940d5" type="module"></script>
+<script src="/assets/js/bibsearch.js?a0257734c700619439a7baf0188a7525" type="module"></script>
 
 <p><input type="text" id="bibsearch" spellcheck="false" autocomplete="off" class="search bibsearch-form-input" placeholder="Type to filter"></p>
 
-<!-- _includes/bibsearch-extra.html -->
-<script defer src="/assets/js/bibsearch_button_highlight.js"></script>
+<script src="/assets/js/bibsearch_button_highlight.js"></script>
 
 <div class="publications">
   <h2 class="year">2025</h2>
