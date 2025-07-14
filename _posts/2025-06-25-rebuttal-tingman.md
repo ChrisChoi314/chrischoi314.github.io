@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Rebuttal to Tingman's Video
-date:   2025-6-25 17:50:21
+date:   2025-07-14 17:50:21
 description: religious apologetics rebuttal
 tags: philosophy
 categories: 
