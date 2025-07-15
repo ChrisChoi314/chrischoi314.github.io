@@ -14,8 +14,6 @@ I wrote a lengthy comment in the comment section detailing my specific objection
 
 ## My Rebuttal to Tingman's Video
 
-Here are some of my thoughts on the points you bring up in the video, and why I personally don't find them convincing.
-
 ### 1. “it is well documented.”
 
 Well, yes, it is, and he mentions the two points most apologists bring up: the Josephus and Tacitus documentations. He mentions that these are from writings really close to his life. This isnt entirely true. In the case of Josephus, the scholarly consensus is that while mention of Jesus is original, some elements of the text show signs of later Christian emendation. Tacitus's and Josephus's mentions of Jesus are actually quite scant. They are not accounts per se; Tacitus writes about the great fire in 64 AD, and mentions the blame put on the Christians by Emperor Nero of the Roman empire. About all that Tacitus tells about Jesus is that he “suffered the extreme penalty during the reign of Tiberius at the hands of one of our procurators, Pontius Pilatus.” *(Annals 15.4)*
