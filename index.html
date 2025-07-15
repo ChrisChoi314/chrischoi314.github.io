@@ -113,6 +113,16 @@
             
           
             
+              
+                <li class="nav-item ">
+                  <a class="nav-link" href="/news/">News
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
           
             
           
@@ -329,50 +339,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                   </td>
                 </tr>
-                <tr>
-                  <th scope="row" style="width: 20%">Jan 11, 2024</th>
-                  <td>
-                    I present my poster for the massive gravity paper at AAS 243, which can be found <a href="https://aas243-aas.ipostersessions.com/?s=A4-E8-89-2C-C2-B1-21-38-BF-A5-DA-54-B8-3D-83-B0" rel="external nofollow noopener" target="_blank">here</a>.
-
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" style="width: 20%">Dec 6, 2023</th>
-                  <td>
-                    My first ever <a href="https://arxiv.org/abs/2312.03932" rel="external nofollow noopener" target="_blank">paper</a>, on reproducing the 15-year NANOGrav detection with time-dependent massive gravity, is finally out on arXiv.
-
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" style="width: 20%">Nov 30, 2023</th>
-                  <td>
-                    Attending the <a href="https://indico.cern.ch/event/1314635/overview" rel="external nofollow noopener" target="_blank">Unravelling the Universe with Pulsar Timing Arrays Workshop</a> at Hilton Garden Inn in Pittsburgh, PA as a <a href="https://indico.cern.ch/event/1314635/registrations/participants" rel="external nofollow noopener" target="_blank">participant</a>.
-
-
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" style="width: 20%">Nov 17, 2023</th>
-                  <td>
-                    Abstract for massive gravity paper accepted to <a href="https://aas.org/meetings/aas243" rel="external nofollow noopener" target="_blank">AAS 243</a>, will be presenting an <a href="https://aas243-aas.ipostersessions.com/?s=A4-E8-89-2C-C2-B1-21-38-BF-A5-DA-54-B8-3D-83-B0" rel="external nofollow noopener" target="_blank">iposter</a> at the conference on Jan 11th, 2024 in New Orleans, Louisiana.
-
-
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" style="width: 20%">Apr 22, 2022</th>
-                  <td>
-                    I am awarded the $3500 <a href="https://www.cmu.edu/uro/summer%20research%20fellowships/SURF/" rel="external nofollow noopener" target="_blank">SURF</a> Fellowship for Summer 2022.
-
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" style="width: 20%">Apr 2, 2020</th>
-                  <td>
-                    I am accepted into Carnegie Mellon University in the Mellon College of Science.
-
-                  </td>
-                </tr>
               </table>
             </div>
           </div>
@@ -404,22 +370,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td>
                     
                       <a class="news-title" href="/blog/2024/vegan-restaurants/">my favorite vegan restaurants</a>
-                    
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" style="width: 20%">Dec 22, 2023</th>
-                  <td>
-                    
-                      <a class="news-title" href="/blog/2023/long-songs/">my slight obsession with long songs</a>
-                    
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" style="width: 20%">Jun 20, 2020</th>
-                  <td>
-                    
-                      <a class="news-title" href="/blog/2020/insects/">why eating insects may be the most ethical</a>
                     
                   </td>
                 </tr>
@@ -791,7 +741,14 @@ making the graviton mass cutoff time too deep into the matter-dominated era.</p>
         handler: () => {
           window.location.href = "/";
         },
-      },{id: "nav-publications",
+      },{id: "nav-news",
+              title: "News",
+              description: "",
+              section: "Navigation",
+              handler: () => {
+                window.location.href = "/news/";
+              },
+            },{id: "nav-publications",
               title: "publications",
               description: "publications by categories in reverse-chronological order.",
               section: "Navigation",
