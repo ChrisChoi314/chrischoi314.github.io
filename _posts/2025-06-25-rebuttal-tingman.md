@@ -55,7 +55,7 @@ When it comes to causes of popularity, there's the **“4 Es model”**, based o
 
 - Christianity was exclusivist  
 - Christianity was evangelizing  
-- Christianity was eschatological  
+- Christianity was [eschatological](https://en.wikipedia.org/wiki/Eschatology) 
 - Christianity was egalitarian  
 
 It was the only religious system at the time which had all four of these features. Every other religious system only had some but not others. It's the combination that did the trick. Additionally, Christianity was adamantly monotheistic. So as a heathen, you are willing to listen about the new god and as you are convinced you are encouraged to stop being pagan all together. So it’s evangelizing people that have no defensive reaction to new info and once you are in you displace their old religion.
