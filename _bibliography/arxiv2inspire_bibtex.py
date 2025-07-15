@@ -10,6 +10,10 @@ arxiv2inspire_bibtex.py  —  v5
     – injects   keywords = {...},   (chosen from VOCAB below, case‑insensitive)
 • Appends ONLY the new entries to   _bibliography/papers.bib
   (creates dir / file as needed).
+
+  usage: paste this into terminal
+             python _bibliography/arxiv2inspire_bibtex.py _bibliography/more_urls.txt
+  idk why u have to do it from the main directory, but it works
 """
 
 from __future__ import annotations
