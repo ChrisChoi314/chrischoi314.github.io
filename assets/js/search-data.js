@@ -13,7 +13,7 @@ ninja.data = [{
       window.location.href = "/";
     },
   },{id: "nav-news",
-          title: "News",
+          title: "news",
           description: "",
           section: "Navigation",
           handler: () => {
