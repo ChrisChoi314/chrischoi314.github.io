@@ -9,8 +9,9 @@ profile:
   image_circular: false # crops the image to make it circular
   address: <p>Pittsburgh, Pennsylvania</p>
   more_info: >
-    <p>email: minyeonc@andrew.cmu.edu</p>
-    <p>Pittsburgh, Pennsylvania</p>
+    <p>Wean Hall 8402</p>
+    <p>Hamerschlag Dr</p>
+    <p>Pittsburgh, PA 15213</p>
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
