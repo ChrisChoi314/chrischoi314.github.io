@@ -18,7 +18,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a 2nd Year Ph.D. student in Physics at Carnegie Mellon University, working in theoretical cosmology under the supervision of Prof. [Tina Kahniashvili](https://www.cmu.edu/physics/people/faculty/kahniashvili.html). My research focuses on how gravitational waves can probe extensions of general relativity, such as massive gravity theories, and the early universe. I use pulsar timing array data to explore aspects of the stochastic gravitational wave background and the implications for Lorentz and parity violation.
+I am a 2nd Year PhD candidate in Physics at Carnegie Mellon University, working in theoretical cosmology under the supervision of Prof. [Tina Kahniashvili](https://www.cmu.edu/physics/people/faculty/kahniashvili.html). My research focuses on how gravitational waves can probe modifications to general relativity, such as massive gravity theories, and the early universe. I use pulsar timing array data to explore aspects of the stochastic gravitational wave background and the implications for Lorentz and parity violation.
 
 ## Background
 
