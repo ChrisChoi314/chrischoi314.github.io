@@ -1,7 +1,249 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://chrischoi314.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chrischoi314.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-01-27T23:03:49+00:00</updated><id>https://chrischoi314.github.io/feed.xml</id><title type="html">blank</title><subtitle>Chris Choi&apos;s personal website
-</subtitle><entry><title type="html">How I prepared for my Qualifying exam (and what actually worked).</title><link href="https://chrischoi314.github.io/blog/2026/quals/" rel="alternate" type="text/html" title="How I prepared for my Qualifying exam (and what actually worked)." /><published>2026-01-27T17:59:31+00:00</published><updated>2026-01-27T17:59:31+00:00</updated><id>https://chrischoi314.github.io/blog/2026/quals</id><content type="html" xml:base="https://chrischoi314.github.io/blog/2026/quals/"><![CDATA[<p>I recently took my oral qualifying exam in my PhD physics program, and I passed! It was a lot of work, and so I decided I would take some time to explain exactly what I did to prepare, how it went, and what I would have done differently.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://chrischoi314.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chrischoi314.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-01-27T23:28:38+00:00</updated><id>https://chrischoi314.github.io/feed.xml</id><title type="html">blank</title><subtitle>Chris Choi&apos;s personal website
+</subtitle><entry><title type="html">How I prepared for my Qualifying exam (and what actually worked).</title><link href="https://chrischoi314.github.io/blog/2026/quals/" rel="alternate" type="text/html" title="How I prepared for my Qualifying exam (and what actually worked)." /><published>2026-01-27T17:59:31+00:00</published><updated>2026-01-27T17:59:31+00:00</updated><id>https://chrischoi314.github.io/blog/2026/quals</id><content type="html" xml:base="https://chrischoi314.github.io/blog/2026/quals/"><![CDATA[<p>I recently took my oral qualifying exam in my PhD physics program, and I passed!</p>
 
-<p>The exam is something that we (as in all of us physics PhD students at Carnegie Mellon University) have to take in our second year, about a week before classes.</p>]]></content><author><name></name></author><category term="grad-school" /><summary type="html"><![CDATA[how I prepared for quals]]></summary></entry><entry><title type="html">FTO Kinchranks</title><link href="https://chrischoi314.github.io/blog/2024/FTO-kinch/" rel="alternate" type="text/html" title="FTO Kinchranks" /><published>2024-07-26T02:51:21+00:00</published><updated>2024-07-26T02:51:21+00:00</updated><id>https://chrischoi314.github.io/blog/2024/FTO-kinch</id><content type="html" xml:base="https://chrischoi314.github.io/blog/2024/FTO-kinch/"><![CDATA[<p>I made an <a href="https://docs.google.com/spreadsheets/d/1YToga0YcG2EagDfU7jvkVqoJpNOtuuC2dwnEFIvHQNw/edit?usp=sharing">FTO Kinch rankings sheet</a> using Tyler Hicks’s idea of averaging the kinch of everyone’s single, ao5, ao12, and ao100. I also borrowed a lot of the coding from James MacDiarmid’s nationality rankings he made a while back, which you can find <a href="https://docs.google.com/spreadsheets/d/18h14yVNiSZscU69jcvmXA8EHmYmMYCZ_6Ma0W2FwlNA/edit?usp=sharing">here</a>.</p>
+<p>This post is my attempt to write down <strong>exactly</strong> what I did to prepare, what actually mattered, what didn’t, and what I would do differently if I had to repeat the process. I’m writing this partly for future students and partly for my future self, because it’s easy to forget the minute details of how it went.</p>
+
+<h2 id="context-what-the-exam-is-at-cmu">Context: what the exam is (at CMU)</h2>
+
+<p>In Carnegie Mellon’s Physics PhD program, we take an oral qualifying exam in our second year (typically about a week before classes begin). The exam is a committee-style oral where you present a short talk about your research for about 30 minutes, and then answer questions from three oral committee members about the presentation. For me, my presentation was on Jan. 8th, 2026 at 12:00 PM and the writeup was due on Dec. 22nd, 2025.</p>
+
+<p>My talk had two main blocks:</p>
+
+<ul>
+  <li><strong>Research portion:</strong> with recommended time of 20 minutes</li>
+  <li><strong>Basic physics connection portion:</strong> with recommended time of 10 minutes</li>
+</ul>
+
+<p>This was what the rubric required us to split the talk into, but within each section, you have complete freedom with what you choose to include, as well as where you want the basic physics connections to go (perhaps in the intro when you are deriving your theory,or at the end, to make it simple for time-keeping). I personally put it at the very end</p>
+
+<p>I started the writeup about 4 days before it was due. Earlier that year, I had a very basic draft of it, that I created by simply appending my two papers togther. Only issue</p>
+
+<blockquote>
+  <p>Every box I draw, every equation I show, and every claim I make should be something I can defend under pressure.</p>
+</blockquote>
+
+<p>But there’s a twist: the goal isn’t to pre-empt every question <em>in the main talk</em>. It’s to present a coherent narrative and <strong>stash the detailed defenses in backup slides</strong>.</p>
+
+<p>Which brings me to the single biggest thing that helped…</p>
+
+<h2 id="the-thing-that-actually-worked-backup-slides-as-a-defense-system">The thing that actually worked: backup slides as a “defense system”</h2>
+
+<p>I treated backup slides like a modular “answer bank.” I didn’t want to derail the main talk, but I <em>did</em> want the ability to respond instantly and cleanly when a committee member asked something technical.</p>
+
+<h3 id="why-backup-slides-matter-more-than-you-think">Why backup slides matter more than you think</h3>
+<p>Most oral exams aren’t about “did you memorize everything,” they’re about:</p>
+<ul>
+  <li>can you reason under pressure,</li>
+  <li>can you communicate,</li>
+  <li>can you defend the structure of your work,</li>
+  <li>and can you recover when you don’t know something immediately.</li>
+</ul>
+
+<p>Backup slides give you <em>recovery tools</em>.</p>
+
+<h3 id="what-i-got-right">What I got right</h3>
+<ul>
+  <li>I had backup slides that I actually used.</li>
+  <li>I was comfortable switching to them when asked.</li>
+  <li>I didn’t treat “going to backup” as failure; I treated it as <strong>preparedness</strong>.</li>
+</ul>
+
+<h3 id="what-i-got-wrong-important">What I got wrong (important)</h3>
+<p>Before the exam, I <strong>deleted two backup slides</strong> that I now think I should have kept:</p>
+<ul>
+  <li>one on <em>solving problems in massive gravity</em> (framing / motivation / typical issues),</li>
+  <li>one on <em>Hankel functions</em> (details I was asked about).</li>
+</ul>
+
+<p>And during the exam, I got questions in exactly those areas, and I realized mid-exam:</p>
+<blockquote>
+  <p>“I literally had the answers on a slide at one point, and I removed it.”</p>
+</blockquote>
+
+<p>If I could redo this, I’d keep more “defense slides,” even if they never get used.</p>
+
+<h2 id="my-preparation-process-step-by-step">My preparation process (step-by-step)</h2>
+
+<p>Below is the concrete workflow I followed. Some of this is “standard advice,” but I’ll emphasize what <em>actually mattered</em> for me.</p>
+
+<h3 id="step-1-build-the-narrative-first-not-the-equations">Step 1: Build the narrative first (not the equations)</h3>
+<p>Early versions of my slides were too “theory paper shaped”—definitions, then math, then results.</p>
+
+<p>What worked better was:</p>
+<ul>
+  <li>start with the <strong>physical problem</strong>,</li>
+  <li>define the <strong>observable</strong> (what PTAs measure),</li>
+  <li>then introduce the <strong>modification</strong> (massive gravity / extra polarizations),</li>
+  <li>then show the <strong>lever arm</strong> (why PTA correlation structure is sensitive),</li>
+  <li>and only then go technical.</li>
+</ul>
+
+<h3 id="step-2-identify-attack-surfaces">Step 2: Identify “attack surfaces”</h3>
+<p>I made a list of statements from my talk that would naturally trigger examiner questions, like:</p>
+<ul>
+  <li>“massive gravity can address X”</li>
+  <li>“the overlap reduction function has these features”</li>
+  <li>“the vector mode behaves like …”</li>
+  <li>“this limit is well-behaved”</li>
+  <li>“we do Bayesian inference / we compare models”</li>
+</ul>
+
+<p>Each “attack surface” gets:</p>
+<ul>
+  <li>a 1–2 sentence spoken defense,</li>
+  <li>and a backup slide with the technical details.</li>
+</ul>
+
+<h3 id="step-3-practice-timing-until-its-boring">Step 3: Practice timing until it’s boring</h3>
+<p>I tracked time aggressively. I ended up with the 19:09 + 8:52 split.</p>
+
+<p>This matters because it dictates whether your exam feels like:</p>
+<ul>
+  <li>“a structured talk with questions,” or</li>
+  <li>“a free-form interrogation after 8 minutes.”</li>
+</ul>
+
+<p>In my case, the talk occupied enough time that the questioning felt anchored to what I’d said.</p>
+
+<h3 id="step-4-prepare-like-a-conversation-not-like-an-exam">Step 4: Prepare like a conversation, not like an exam</h3>
+<p>This was a subtle but huge mindset shift: I practiced responding as if I were doing research group Q&amp;A, not a “test.”</p>
+
+<p>That meant rehearsing:</p>
+<ul>
+  <li>“Here’s my best answer”</li>
+  <li>“Here’s what assumption I’m making”</li>
+  <li>“Here’s how I’d check that if we had time”</li>
+  <li>“Here’s the limiting behavior / sanity check”</li>
+</ul>
+
+<h3 id="step-5-make-fallback-moves-automatic">Step 5: Make “fallback moves” automatic</h3>
+<p>Under stress, you need default moves that keep you from spiraling.</p>
+
+<p>My fallback moves were:</p>
+<ul>
+  <li>restate the question in my own words,</li>
+  <li>identify the key variable/limit,</li>
+  <li>give a “physics-first” answer,</li>
+  <li>then optionally add math.</li>
+</ul>
+
+<p>And if I had it: go to a backup slide.</p>
+
+<h2 id="the-exam-itself-what-they-asked-and-how-i-responded">The exam itself: what they asked, and how I responded</h2>
+
+<p>Below is the structure I recommend for writing this section:</p>
+
+<ul>
+  <li>one subsection per examiner,</li>
+  <li>each question as a bullet,</li>
+  <li>your initial response,</li>
+  <li>the follow-up question,</li>
+  <li>and what you wish you had said.</li>
+</ul>
+
+<p>I can only include the <em>one</em> question snippet I actually see in this conversation context, so I’m not going to fabricate the rest. But I’ll format it the way you can paste your transcript.</p>
+
+<h3 id="examiner-a-example-format">Examiner A (example format)</h3>
+<p><strong>Q:</strong> “Why massive gravity? It introduces more parameters compared to GR. What is it solving exactly?”<br />
+<strong>What I said (in the moment):</strong><br />
+I framed it as addressing open cosmology problems (e.g., cosmic tensions, dark energy, quantum gravity motivations), and argued massive gravity is more naturally suited to explaining dark energy than dark matter (since DM would require additional excitations / constraints interplay), then I tried to connect this to the stress-energy requirements.</p>
+
+<p><strong>What I wish I had said (cleaner):</strong></p>
+<ul>
+  <li>First: acknowledge parameter-count critique explicitly.</li>
+  <li>Then: articulate one <em>sharp</em> target: e.g. “effective late-time acceleration / modified propagation / altered polarization content.”</li>
+  <li>Then: emphasize falsifiability: “PTAs constrain polarization structure and dispersion—this is not an unfalsifiable patch.”</li>
+  <li>Then: give the most important equation-level statement: <em>what changes in the field equations / what new degree(s) of freedom appear / what observable signature changes.</em></li>
+</ul>
+
+<p><strong>Backup slide I should have had ready:</strong><br />
+A single slide titled: “What massive gravity changes (in one page)” with:</p>
+<ul>
+  <li>degrees of freedom count,</li>
+  <li>dispersion relation (massive mode),</li>
+  <li>polarization content,</li>
+  <li>and <em>one</em> clear PTA observable implication.</li>
+</ul>
+
+<blockquote>
+  <p><strong>[INSERT YOUR FULL TRANSCRIPT HERE]</strong></p>
+  <ul>
+    <li>Q1 …</li>
+    <li>Your answer …</li>
+    <li>Follow-up …</li>
+    <li>What you’d improve …</li>
+  </ul>
+</blockquote>
+
+<h3 id="examiner-b">Examiner B</h3>
+<blockquote>
+  <p><strong>[PASTE TRANSCRIPT + YOUR NOTES]</strong></p>
+</blockquote>
+
+<h3 id="examiner-c">Examiner C</h3>
+<blockquote>
+  <p><strong>[PASTE TRANSCRIPT + YOUR NOTES]</strong></p>
+</blockquote>
+
+<h2 id="what-i-would-do-differently-next-time">What I would do differently next time</h2>
+
+<p>Here are the changes I would make, ordered by impact.</p>
+
+<h3 id="1-keep-more-backup-slides-not-fewer">1) Keep more backup slides, not fewer</h3>
+<p>Deleting backup slides to “simplify” was the wrong instinct. The main talk should be clean. Backup slides are allowed to be dense.</p>
+
+<p>I’d keep:</p>
+<ul>
+  <li>“definitions + limits” slide (A→1 style limits, continuity, divergences)</li>
+  <li>“common pitfalls” slide (normalizations, gauge issues, integrals)</li>
+  <li>“special functions / Hankel” slide if there’s any chance it appears</li>
+  <li>“why this theory” slide (motivation, no handwaving)</li>
+</ul>
+
+<h3 id="2-prepare-30-second-answers-to-the-predictable-meta-questions">2) Prepare 30-second answers to the predictable meta-questions</h3>
+<p>The most predictable questions are often the highest leverage:</p>
+<ul>
+  <li>“Why this problem?”</li>
+  <li>“Why this model?”</li>
+  <li>“What would change your mind?”</li>
+  <li>“What’s the main assumption?”</li>
+  <li>“How do you validate your code?”</li>
+</ul>
+
+<p>I had answers, but they could have been tighter and more “committee-friendly.”</p>
+
+<h3 id="3-make-the-research--fundamentals-bridge-more-explicit">3) Make the research → fundamentals bridge more explicit</h3>
+<p>One risk in a research-heavy talk is that fundamentals come out only when you’re forced into them by questions.</p>
+
+<p>I’d add a deliberate “bridge” slide:</p>
+<ul>
+  <li>one core physical principle,</li>
+  <li>one simplified limiting case,</li>
+  <li>and one sanity check.</li>
+</ul>
+
+<h3 id="4-treat-the-exam-like-a-performance-because-it-is">4) Treat the exam like a performance (because it is)</h3>
+<p>This isn’t “fake.” It’s acknowledging reality: clarity and confidence change how your content is received.</p>
+
+<p>That means:</p>
+<ul>
+  <li>practicing transitions,</li>
+  <li>practicing how you pause,</li>
+  <li>practicing how you say “I don’t know, but here’s how I’d find out.”</li>
+</ul>
+
+<h2 id="final-thoughts">Final thoughts</h2>
+
+<p>I passed with a clear pass, and I’m relieved—but I’m also glad I’m writing this down while it’s fresh.</p>
+
+<p>If you’re a student about to take an oral exam: don’t optimize for “knowing everything.” Optimize for <strong>having a robust system</strong>:</p>
+<ul>
+  <li>a clean narrative,</li>
+  <li>prepared pivots,</li>
+  <li>and backup slides that save you when the committee digs deep.</li>
+</ul>
+
+<p>If you want, feel free to email me and I can share a sanitized slide strategy template.</p>]]></content><author><name></name></author><category term="grad-school" /><summary type="html"><![CDATA[A detailed, practical breakdown of how I prepared for my PhD oral quals and what I would change next time.]]></summary></entry><entry><title type="html">FTO Kinchranks</title><link href="https://chrischoi314.github.io/blog/2024/FTO-kinch/" rel="alternate" type="text/html" title="FTO Kinchranks" /><published>2024-07-26T02:51:21+00:00</published><updated>2024-07-26T02:51:21+00:00</updated><id>https://chrischoi314.github.io/blog/2024/FTO-kinch</id><content type="html" xml:base="https://chrischoi314.github.io/blog/2024/FTO-kinch/"><![CDATA[<p>I made an <a href="https://docs.google.com/spreadsheets/d/1YToga0YcG2EagDfU7jvkVqoJpNOtuuC2dwnEFIvHQNw/edit?usp=sharing">FTO Kinch rankings sheet</a> using Tyler Hicks’s idea of averaging the kinch of everyone’s single, ao5, ao12, and ao100. I also borrowed a lot of the coding from James MacDiarmid’s nationality rankings he made a while back, which you can find <a href="https://docs.google.com/spreadsheets/d/18h14yVNiSZscU69jcvmXA8EHmYmMYCZ_6Ma0W2FwlNA/edit?usp=sharing">here</a>.</p>
 
 <p>His ranking pulls from the <a href="https://docs.google.com/spreadsheets/d/1JjHTxu-KOpwmHGyGmgBa1N4WTmu3CEKAUyZ1BykRg58/edit?usp=sharing">main FTO rankings sheet</a> that Ben Streeter maintains, as well as the online weekly competition for <a href="https://www.speedsolving.com/competition/index.php">speedsolving.com</a> and as well as the unofficial cubingcontest rankings for when people compete in it at comps. 
 Hopefully, this is a better way of defining how “good” someone is at FTO, which takes into account all the different time formats.</p>

@@ -56,7 +56,7 @@ ninja.data = [{
           },
         },{id: "post-how-i-prepared-for-my-qualifying-exam-and-what-actually-worked",
       title: "How I prepared for my Qualifying exam (and what actually worked).",
-      description: "how I prepared for quals",
+      description: "A detailed, practical breakdown of how I prepared for my PhD oral quals and what I would change next time.",
       section: "Posts",
       handler: () => {
         window.location.href = "/blog/2026/quals/";
