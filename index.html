@@ -141,6 +141,8 @@
             
           
             
+          
+            
               
                 <li class="nav-item ">
                   <a class="nav-link" href="/publications/">publications
@@ -340,9 +342,17 @@ document.addEventListener('DOMContentLoaded', () => {
           <!-- Latest posts -->
           <h2><a href="/blog/" style="color: inherit;">latest posts</a></h2>
           <div class="news">
-            <div class="table-responsive">
+            <div class="table-responsive" style="max-height: 60vw">
               <table class="table table-sm table-borderless">
               
+                <tr>
+                  <th scope="row" style="width: 20%">Jan 27, 2026</th>
+                  <td>
+                    
+                      <a class="news-title" href="/blog/2026/quals/">How I prepared for my Qualifying exam (and what actually worked).</a>
+                    
+                  </td>
+                </tr>
                 <tr>
                   <th scope="row" style="width: 20%">Jul 26, 2024</th>
                   <td>
@@ -356,14 +366,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <td>
                     
                       <a class="news-title" href="/blog/2023/long-songs/">my slight obsession with long songs</a>
-                    
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" style="width: 20%">Jun 20, 2020</th>
-                  <td>
-                    
-                      <a class="news-title" href="/blog/2020/insects/">why eating insects may be the most ethical</a>
                     
                   </td>
                 </tr>
@@ -774,7 +776,18 @@ making the graviton mass cutoff time too deep into the matter-dominated era.</p>
               handler: () => {
                 window.location.href = "/teaching/";
               },
-            },{id: "post-fto-kinchranks",
+            },{id: "post-how-i-prepared-for-my-qualifying-exam-and-what-actually-worked",
+          
+            title: "How I prepared for my Qualifying exam (and what actually worked).",
+          
+          description: "how I prepared for quals",
+          section: "Posts",
+          handler: () => {
+            
+              window.location.href = "/blog/2026/quals/";
+            
+          },
+        },{id: "post-fto-kinchranks",
           
             title: "FTO Kinchranks",
           

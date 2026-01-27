@@ -54,7 +54,14 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-fto-kinchranks",
+        },{id: "post-how-i-prepared-for-my-qualifying-exam-and-what-actually-worked",
+      title: "How I prepared for my Qualifying exam (and what actually worked).",
+      description: "how I prepared for quals",
+      section: "Posts",
+      handler: () => {
+        window.location.href = "/blog/2026/quals/";
+      },
+    },{id: "post-fto-kinchranks",
       title: "FTO Kinchranks",
       description: "rankings for FTOers for all time formats",
       section: "Posts",
