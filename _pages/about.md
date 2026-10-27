@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Researcher · Theoretical Cosmology · PTA · Massive Gravity
+subtitle: Researcher · Theoretical Cosmology · PTA · Gravitational Waves
 profile:
   align: right
   image: prof_pic.png
@@ -18,7 +18,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a 2nd Year PhD candidate in Physics at Carnegie Mellon University, working in theoretical cosmology under the supervision of Prof. [Tina Kahniashvili](https://www.cmu.edu/physics/people/faculty/kahniashvili.html). My research focuses on how gravitational waves can probe modifications to general relativity, such as massive gravity theories, and the early universe. I use pulsar timing array data to explore aspects of the stochastic gravitational wave background and the implications for Lorentz and parity violation.
+I am a 3rd Year PhD candidate in Physics at Carnegie Mellon University, working in theoretical cosmology under the supervision of Prof. [Tina Kahniashvili](https://www.cmu.edu/physics/people/faculty/kahniashvili.html). My research focuses on how gravitational waves can probe modifications to general relativity, such as massive gravity theories, and the early universe. I use pulsar timing array data to explore aspects of the stochastic gravitational wave background.
 
 ## Background
 
@@ -26,7 +26,7 @@ I received my B.S. in Physics from Carnegie Mellon University in 2024, where I d
 
 ## Outside Academia
 
-Outside of research, I enjoy reading hard science fiction, drawing, climbing, weightlifting, and competitive speedcubing. I also have a deep interest in linguistics, in particular, the study of language families.
+Outside of research, I enjoy reading hard science fiction, drawing, rock climbing, weightlifting, and competitive speedcubing. I also have a deep interest in linguistics, in particular, the study of language families.
 
 
 {% raw %}
